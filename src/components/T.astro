@@ -1,0 +1,252 @@
+---
+import { getEntry } from 'astro:content';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const entry = await getEntry('glossario', id);
+
+if (!entry) {
+  console.warn(`[Transparently] Glossary entry not found for term id "${id}"`);
+}
+
+const source = entry?.data.sources?.[0];
+---
+
+{
+  entry ? (
+    <span class="termine-wrapper" data-term-id={id} data-term-category={entry.data.category}>
+      <button
+        type="button"
+        class="termine-trigger"
+        aria-expanded="false"
+        aria-haspopup="true"
+      >
+        <slot />
+      </button>
+      <span class="termine-popup" role="tooltip" hidden>
+        <button type="button" class="termine-popup-close" aria-label="Chiudi">✕</button>
+        <span class="termine-popup-header">{entry.data.term}</span>
+        <span class="termine-popup-definition">{entry.data.definition}</span>
+        <span class="termine-popup-links">
+          <a href={`/glossario/${id}`}>Vai al glossario &rarr;</a>
+          {source && (
+            <a href={source.url} target="_blank" rel="noopener noreferrer">
+              Fonte ufficiale &rarr;
+            </a>
+          )}
+        </span>
+      </span>
+    </span>
+  ) : (
+    <span>
+      <slot />
+    </span>
+  )
+}
+
+<style>
+  .termine-wrapper {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+  }
+
+  .termine-trigger {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
+    text-decoration-color: var(--color-accent);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.18em;
+  }
+
+  .termine-trigger:focus-visible {
+    outline: 2px solid rgba(26, 58, 92, 0.28);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .termine-popup {
+    position: absolute;
+    inset-inline-start: 0;
+    top: calc(100% + 0.5rem);
+    z-index: 50;
+    display: block;
+    width: min(20rem, calc(100vw - 24px));
+    max-width: 20rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: #fafafa;
+    box-shadow: 0 10px 30px rgba(10, 10, 10, 0.08);
+    padding: 12px 16px;
+  }
+
+  .termine-popup[hidden] {
+    display: none;
+  }
+
+  .termine-popup-header {
+    display: block;
+    color: #0a0a0a;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.35;
+    padding-right: 1.75rem;
+  }
+
+  .termine-popup-definition {
+    display: block;
+    margin-top: 4px;
+    color: #444;
+    font-size: 0.8125rem;
+    line-height: 1.5;
+  }
+
+  .termine-popup-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.9rem;
+    margin-top: 8px;
+    color: var(--color-accent);
+    font-size: 0.75rem;
+  }
+
+  .termine-popup-links a {
+    color: var(--color-accent);
+  }
+
+  .termine-popup-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    border: 0;
+    background: transparent;
+    color: #666;
+    cursor: pointer;
+    font: inherit;
+    line-height: 1;
+    padding: 0;
+  }
+</style>
+
+<script>
+  if (!window.__transparentlyTermsInitialized) {
+    window.__transparentlyTermsInitialized = true;
+
+    let openWrapper = null;
+
+    const closeTerm = (wrapper) => {
+      if (!wrapper) return;
+      const trigger = wrapper.querySelector('.termine-trigger');
+      const popup = wrapper.querySelector('.termine-popup');
+
+      if (!trigger || !popup) return;
+
+      trigger.setAttribute('aria-expanded', 'false');
+      popup.hidden = true;
+      popup.style.left = '';
+      popup.style.top = '';
+      openWrapper = openWrapper === wrapper ? null : openWrapper;
+    };
+
+    const positionPopup = (wrapper) => {
+      const trigger = wrapper.querySelector('.termine-trigger');
+      const popup = wrapper.querySelector('.termine-popup');
+
+      if (!trigger || !popup) return;
+
+      popup.hidden = false;
+      popup.style.left = '0px';
+      popup.style.top = '0px';
+
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const triggerRect = trigger.getBoundingClientRect();
+      const popupRect = popup.getBoundingClientRect();
+      const viewportWidth = document.documentElement.clientWidth;
+      const margin = 12;
+
+      let left = triggerRect.width / 2 - popupRect.width / 2;
+      const leftEdge = wrapperRect.left + left;
+      const rightEdge = leftEdge + popupRect.width;
+
+      if (leftEdge < margin) {
+        left += margin - leftEdge;
+      }
+
+      if (rightEdge > viewportWidth - margin) {
+        left -= rightEdge - (viewportWidth - margin);
+      }
+
+      const showBelow = triggerRect.top < popupRect.height + 24;
+      popup.style.left = `${left}px`;
+      popup.style.top = showBelow
+        ? `${trigger.offsetHeight + 8}px`
+        : `${-popupRect.height - 8}px`;
+    };
+
+    const openTerm = (wrapper) => {
+      if (openWrapper && openWrapper !== wrapper) {
+        closeTerm(openWrapper);
+      }
+
+      const trigger = wrapper.querySelector('.termine-trigger');
+      const popup = wrapper.querySelector('.termine-popup');
+
+      if (!trigger || !popup) return;
+
+      trigger.setAttribute('aria-expanded', 'true');
+      positionPopup(wrapper);
+      openWrapper = wrapper;
+    };
+
+    document.addEventListener('click', (event) => {
+      const target = event.target;
+      const trigger = target.closest('.termine-trigger');
+      const closeButton = target.closest('.termine-popup-close');
+
+      if (trigger) {
+        const wrapper = trigger.closest('.termine-wrapper');
+        if (!wrapper) return;
+
+        if (wrapper === openWrapper) {
+          closeTerm(wrapper);
+        } else {
+          openTerm(wrapper);
+        }
+        return;
+      }
+
+      if (closeButton) {
+        const wrapper = closeButton.closest('.termine-wrapper');
+        closeTerm(wrapper);
+        return;
+      }
+
+      if (openWrapper && !openWrapper.contains(target)) {
+        closeTerm(openWrapper);
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && openWrapper) {
+        closeTerm(openWrapper);
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (openWrapper) {
+        closeTerm(openWrapper);
+      }
+    });
+  }
+</script>

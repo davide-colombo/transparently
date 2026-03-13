@@ -1,0 +1,72 @@
+---
+interface Props {
+  sources: Array<{ name: string; url: string }>;
+}
+
+const { sources } = Astro.props;
+---
+
+{
+  sources.length > 0 && (
+    <section class="sources-section">
+      <h2 class="sources-section-heading">Fonti ufficiali</h2>
+      <div class="sources-section-list">
+        {sources.map((source) => (
+          <div class="source-item">
+            <span class="source-name">{source.name}</span>
+            <a
+              href={source.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="source-link"
+            >
+              {source.url} ↗
+            </a>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .sources-section {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 3rem;
+    padding-top: 2rem;
+  }
+
+  .sources-section-heading {
+    color: #0a0a0a;
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+
+  .sources-section-list {
+    margin-top: 1rem;
+  }
+
+  .source-item {
+    margin-bottom: 0.75rem;
+  }
+
+  .source-name {
+    display: block;
+    color: #0a0a0a;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .source-link {
+    display: block;
+    margin-top: 0.15rem;
+    color: var(--color-accent);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+</style>

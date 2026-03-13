@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('glossario');
+
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+const allArticles = await getCollection('articoli', ({ data }) => !data.draft);
+const relatedArticles = allArticles.filter((article) =>
+  entry.data.relatedArticles.includes(article.id),
+);
+
+const categoryLabels = {
+  'contratti-lavoro': 'Contratti e lavoro',
+  'identita-digitale': 'Identità digitale',
+  'fisco-previdenza': 'Fisco e previdenza',
+  sanita: 'Sanità',
+  generale: 'Generale',
+} as const;
+---
+
+<BaseLayout title={entry.data.term} description={entry.data.definition}>
+  <article class="mx-auto max-w-[42.5rem]">
+    <header class="border-b border-divider pb-8">
+      <p class="text-[0.72rem] uppercase tracking-[0.2em] text-ink/55">
+        {categoryLabels[entry.data.category]}
+      </p>
+      <h1 class="mt-5 font-serif text-5xl leading-none tracking-tight text-ink md:text-[4.2rem]">
+        {entry.data.term}
+      </h1>
+      <p class="mt-5 text-lg leading-8 text-ink/72">
+        {entry.data.definition}
+      </p>
+    </header>
+
+    <div class="article-body mt-10">
+      <Content />
+    </div>
+
+    {relatedArticles.length > 0 && (
+      <section class="mt-12 border-t border-divider pt-8">
+        <p class="text-[0.72rem] uppercase tracking-[0.2em] text-ink/55">Articoli collegati</p>
+        <div class="mt-4 space-y-3">
+          {relatedArticles.map((article) => (
+            <a
+              href={`/articoli/${article.id}`}
+              class="block border-l border-divider pl-4 no-underline transition hover:border-accent"
+            >
+              <span class="block font-serif text-2xl leading-tight text-ink hover:text-accent">
+                {article.data.title}
+              </span>
+              <span class="mt-1 block text-sm leading-7 text-ink/72">{article.data.description}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+  </article>
+</BaseLayout>

@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from 'astro:content';
+import CallToAction from '../../components/CallToAction.astro';
+import SourcesSection from '../../components/SourcesSection.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articoli', ({ data }) => !data.draft);
+
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+
+const categoryLabels = {
+  'contratti-lavoro': 'Contratti e lavoro',
+  'identita-digitale': 'Identità digitale',
+  'fisco-previdenza': 'Fisco e previdenza',
+  sanita: 'Sanità',
+} as const;
+
+const difficultyLabels = {
+  base: 'Base',
+  intermedio: 'Intermedio',
+  avanzato: 'Avanzato',
+} as const;
+
+const formattedDate = new Intl.DateTimeFormat('it-IT', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+}).format(article.data.date);
+
+const formattedUpdated = article.data.updated
+  ? new Intl.DateTimeFormat('it-IT', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(article.data.updated)
+  : null;
+
+const shouldShowCta = ['contratti-lavoro', 'fisco-previdenza'].includes(article.data.category);
+---
+
+<BaseLayout
+  title={article.data.title}
+  description={article.data.description}
+  ogType="article"
+  publishedTime={article.data.date}
+  updatedTime={article.data.updated}
+>
+  <article class="mx-auto max-w-[42.5rem]">
+    <header class="border-b border-divider pb-8">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.72rem] uppercase tracking-[0.2em] text-ink/55">
+        <span>{categoryLabels[article.data.category]}</span>
+        <span>{difficultyLabels[article.data.difficulty]}</span>
+        <time datetime={article.data.date.toISOString()}>{formattedDate}</time>
+        {formattedUpdated && <span>Aggiornato {formattedUpdated}</span>}
+      </div>
+
+      <h1 class="mt-6 font-serif text-5xl leading-[0.96] tracking-tight text-ink md:text-[4.2rem]">
+        {article.data.title}
+      </h1>
+      <p class="mt-6 text-lg leading-8 text-ink/72">
+        {article.data.description}
+      </p>
+    </header>
+
+    <div class="article-body mt-10">
+      <Content />
+    </div>
+
+    <footer class="mt-12">
+      {shouldShowCta && (
+        <div>
+          <CallToAction />
+        </div>
+      )}
+
+      <SourcesSection sources={article.data.sources} />
+    </footer>
+  </article>
+</BaseLayout>

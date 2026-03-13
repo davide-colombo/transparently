@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from '../components/ArticleCard.astro';
+import GlossaryEntry from '../components/GlossaryEntry.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const articles = (await getCollection('articoli', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+const glossary = (await getCollection('glossario')).sort((a, b) =>
+  a.data.term.localeCompare(b.data.term, 'it'),
+);
+---
+
+<BaseLayout
+  title="Transparently"
+  description="Guida civica in italiano per orientarsi tra contratti, identità digitale, fisco e servizi pubblici."
+>
+  <section class="mx-auto max-w-6xl">
+    <div class="max-w-4xl">
+      <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Guida civica</p>
+      <h1 class="mt-4 max-w-3xl font-serif text-6xl leading-[0.92] tracking-tight text-ink md:text-[5.5rem]">
+        La burocrazia italiana, spiegata.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-ink/72 md:text-xl">
+        Transparently traduce linguaggio amministrativo, contratti, identità digitale e procedure
+        pubbliche in italiano leggibile. Ogni guida parte da una domanda concreta e rimanda sempre
+        a fonti istituzionali verificabili.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-6xl border-t border-divider pt-12">
+    <div class="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(18rem,0.7fr)]">
+      <div class="space-y-4">
+        <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Metodo</p>
+        <h2 class="font-serif text-4xl leading-tight tracking-tight text-ink">
+          Meno gergo, più contesto.
+        </h2>
+        <p class="max-w-2xl text-base leading-8 text-ink/72">
+          Qui trovi spiegazioni costruite per chi sta affrontando il primo contratto di lavoro, la
+          prima dichiarazione, il primo accesso a SPID o alla CIE. Non è consulenza legale: è un
+          punto di orientamento scritto con precisione e senza paternalismi.
+        </p>
+      </div>
+
+      <div class="border-t border-divider bg-muted px-6 py-6 md:border-t-0">
+        <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Aree principali</p>
+        <div class="mt-5 space-y-4 text-base leading-7 text-ink/78">
+          <p>Contratti di lavoro, diritti, rinnovi e clausole da leggere prima di firmare.</p>
+          <p>SPID, CIE, PEC e infrastrutture digitali che ormai entrano nella vita quotidiana.</p>
+          <p>Fisco, previdenza e procedure amministrative spiegate con esempi chiari.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-6xl border-t border-divider pt-10">
+    <div class="mb-8 flex items-end justify-between gap-6">
+      <div>
+        <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Articoli</p>
+        <h2 class="mt-3 font-serif text-4xl tracking-tight text-ink">Guide recenti</h2>
+      </div>
+      <a href="/articoli" class="text-sm font-medium text-accent">
+        Tutti gli articoli
+      </a>
+    </div>
+
+    <div>
+      {articles.map((article) => (
+        <ArticleCard
+          href={`/articoli/${article.id}`}
+          title={article.data.title}
+          description={article.data.description}
+          date={article.data.date}
+          category={article.data.category}
+          difficulty={article.data.difficulty}
+        />
+      ))}
+    </div>
+  </section>
+
+  <section class="mx-auto mt-16 max-w-6xl border-t border-divider pt-10">
+    <div class="mb-8 flex items-end justify-between gap-6">
+      <div>
+        <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Glossario</p>
+        <h2 class="mt-3 font-serif text-4xl tracking-tight text-ink">Termini da capire subito</h2>
+      </div>
+      <a href="/glossario" class="text-sm font-medium text-accent">
+        Apri il glossario
+      </a>
+    </div>
+
+    <div>
+      {glossary.map((entry) => (
+        <GlossaryEntry
+          href={`/glossario/${entry.id}`}
+          term={entry.data.term}
+          definition={entry.data.definition}
+          category={entry.data.category}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,99 @@
+@config "../../tailwind.config.mjs";
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Helvetica Neue", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+
+  --color-paper: #fafafa;
+  --color-ink: #0a0a0a;
+  --color-accent: #1a3a5c;
+  --color-muted: #f0f0f0;
+  --color-divider: #f0f0f0;
+}
+
+@layer base {
+  html {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-feature-settings: "liga" 1, "kern" 1;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  a {
+    color: var(--color-accent);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+
+  ::selection {
+    background: rgba(26, 58, 92, 0.16);
+  }
+}
+
+@layer components {
+  .article-body {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: color-mix(in srgb, var(--color-ink) 88%, white);
+  }
+
+  .article-body > * + * {
+    margin-top: 1.35rem;
+  }
+
+  .article-body h2 {
+    margin-top: 3rem;
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 1.8rem + 1vw, 2.6rem);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--color-ink);
+  }
+
+  .article-body h3 {
+    margin-top: 2.4rem;
+    font-family: var(--font-serif);
+    font-size: 1.6rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--color-ink);
+  }
+
+  .article-body p,
+  .article-body ul,
+  .article-body ol,
+  .article-body blockquote {
+    max-width: 68ch;
+  }
+
+  .article-body strong {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+
+  .article-body a {
+    color: var(--color-accent);
+  }
+}

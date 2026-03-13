@@ -1,0 +1,43 @@
+---
+const pathname = Astro.url.pathname;
+
+const links = [
+  { href: '/articoli', label: 'Articoli' },
+  { href: '/glossario', label: 'Glossario' },
+  { href: '/about', label: 'About' },
+];
+---
+
+<header class="sticky top-0 z-30 border-b border-divider bg-paper/95 backdrop-blur-sm">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4 md:px-8">
+    <a href="/" class="leading-none">
+      <span class="block font-serif text-3xl tracking-tight text-ink">Transparently</span>
+      <span class="hidden text-[0.72rem] uppercase tracking-[0.24em] text-ink/55 md:block">
+        La burocrazia italiana, spiegata.
+      </span>
+    </a>
+
+    <nav aria-label="Navigazione principale">
+      <ul class="flex items-center gap-4 text-sm md:gap-6">
+        {links.map((link) => {
+          const active =
+            pathname === link.href || (link.href !== '/' && pathname.startsWith(`${link.href}/`));
+
+          return (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  'text-sm underline-offset-4 transition hover:text-accent',
+                  active ? 'font-medium text-accent underline' : 'text-ink/72 no-underline',
+                ]}
+              >
+                {link.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  </div>
+</header>

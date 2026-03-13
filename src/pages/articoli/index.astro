@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import ArticleCard from '../../components/ArticleCard.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const articles = (await getCollection('articoli', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
+);
+---
+
+<BaseLayout
+  title="Articoli"
+  description="Raccolta di guide pratiche su lavoro, identità digitale, fisco e burocrazia italiana."
+>
+  <section class="mx-auto max-w-6xl">
+    <div class="max-w-3xl">
+      <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Archivio</p>
+      <h1 class="mt-4 font-serif text-5xl leading-none tracking-tight text-ink md:text-6xl">
+        Articoli
+      </h1>
+      <p class="mt-5 text-lg leading-8 text-ink/72">
+        Guide scritte per leggere meglio contratti, procedure pubbliche e strumenti digitali che
+        usi davvero. Il formato è semplice: una domanda concreta, una risposta chiara, fonti
+        ufficiali alla fine.
+      </p>
+    </div>
+
+    <div class="mt-12">
+      {articles.map((article) => (
+        <ArticleCard
+          href={`/articoli/${article.id}`}
+          title={article.data.title}
+          description={article.data.description}
+          date={article.data.date}
+          category={article.data.category}
+          difficulty={article.data.difficulty}
+        />
+      ))}
+    </div>
+  </section>
+</BaseLayout>
