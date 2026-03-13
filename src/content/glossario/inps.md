@@ -1,7 +1,7 @@
 ---
 term: "Istituto Nazionale della Previdenza Sociale"
 definition: "Ente pubblico che gestisce contributi, pensioni e numerose prestazioni previdenziali e assistenziali."
-relatedArticles: [spid-guida-completa]
+relatedArticles: [spid-guida-completa, app-io-guida-completa]
 sources:
   - name: "INPS"
     url: "https://www.inps.it"

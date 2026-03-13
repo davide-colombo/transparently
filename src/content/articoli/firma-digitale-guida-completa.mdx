@@ -1,0 +1,73 @@
+---
+title: "Firma digitale: cos'è, come funziona, e come ottenerla"
+description: "Guida pratica alla firma digitale: valore legale, differenza con le altre firme elettroniche, come acquistarla, quando è necessaria, e il rapporto con PEC e identità digitale."
+date: 2026-03-13
+verified: 2026-03-13
+verification_notes: "Verificato su normattiva.it, agid.gov.it. Art. 24 D.Lgs. 82/2005 (CAD), Reg. UE 910/2014 (eIDAS), art. 21 e 35 CAD. Elenco prestatori fiduciari qualificati AgID consultato il 13/03/2026. Testi vigenti al 13/03/2026."
+category: identita-digitale
+tags: [firma digitale, firma elettronica qualificata, eIDAS, identità digitale, PEC]
+sources:
+  - name: "D.Lgs. 82/2005 — CAD, artt. 21, 24, 35"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82"
+  - name: "Reg. UE 910/2014 — eIDAS"
+    url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32014R0910"
+  - name: "AgID — Firma elettronica qualificata"
+    url: "https://www.agid.gov.it/it/piattaforme/firma-elettronica-qualificata"
+  - name: "AgID — Prestatori di servizi fiduciari qualificati"
+    url: "https://www.agid.gov.it/it/piattaforme/firma-elettronica-qualificata/prestatori-servizi-fiduciari-qualificati"
+difficulty: base
+regional_scope: null
+draft: false
+---
+
+import T from '../../components/T.astro';
+
+La <T id="firma-digitale">firma digitale</T> è lo strumento che dà valore legale pieno a un documento informatico: equivale, per effetto di legge, alla firma autografa su carta. È indispensabile quando devi sottoscrivere un contratto a distanza, presentare un'istanza alla Pubblica Amministrazione, firmare un bilancio societario o autenticare qualsiasi documento che richieda certezza sull'identità del firmatario e sull'integrità del contenuto. Questa guida spiega cos'è, come si distingue dalle altre firme elettroniche, come ottenerla, e quando ti serve davvero.
+
+## Cos'è la firma digitale
+
+La firma digitale è un tipo specifico di firma elettronica qualificata, disciplinata dall'articolo 24 del <T id="cad">Codice dell'Amministrazione Digitale</T> (D.Lgs. 82/2005) e dal Regolamento europeo eIDAS (Reg. UE 910/2014). In Italia, i due termini — firma digitale e firma elettronica qualificata — sono nella pratica equivalenti.
+
+La firma digitale garantisce tre proprietà giuridicamente rilevanti. L'autenticità: il documento è stato firmato dalla persona indicata, la cui identità è certificata da un soggetto accreditato. L'integrità: il documento non è stato alterato dopo la firma — qualsiasi modifica, anche minima, invalida la firma. Il non ripudio: il firmatario non può negare di aver firmato il documento.
+
+Il meccanismo tecnico si basa sulla crittografia asimmetrica: il firmatario possiede una coppia di chiavi (una privata, custodita in modo sicuro, e una pubblica, contenuta nel certificato qualificato). Il documento viene firmato con la chiave privata; chiunque può verificare la firma usando la chiave pubblica. Il certificato qualificato che lega l'identità del firmatario alla chiave pubblica è rilasciato da un prestatore di servizi fiduciari qualificato, accreditato presso <T id="agid">AgID</T> ai sensi dell'art. 29 del CAD e dell'art. 21 del Regolamento eIDAS.
+
+## Firma digitale e altre firme elettroniche
+
+La normativa italiana ed europea prevede diversi livelli di firma elettronica, e la confusione tra di essi è molto frequente. La firma elettronica semplice è la forma più debole: può essere un click su "accetto", un PIN, un'autenticazione via <T id="spid">SPID</T>. Ha valore probatorio limitato, liberamente valutabile dal giudice. La firma elettronica avanzata (FEA) offre garanzie maggiori — identifica il firmatario e rileva eventuali modifiche al documento — ed è riconosciuta dalla legge in molti contesti (ad esempio, la firma grafometrica su tablet usata in banca). La firma elettronica qualificata, cioè la firma digitale, è il livello massimo: è l'unica che ha lo stesso valore della firma autografa per espressa previsione di legge (art. 21, comma 2, del CAD) e l'unica che non può essere disconosciuta in giudizio salvo querela di falso.
+
+La distinzione ha conseguenze pratiche dirette. Per sottoscrivere un contratto di compravendita immobiliare, un atto societario, un'istanza alla PA che richieda firma autografa, o un documento da depositare in un procedimento giudiziario, serve la firma digitale. Per accettare le condizioni d'uso di un servizio online o autorizzare un'operazione bancaria, una firma semplice o avanzata è sufficiente.
+
+## Come ottenere la firma digitale
+
+Per ottenere una firma digitale devi rivolgerti a un prestatore di servizi fiduciari qualificato accreditato presso AgID. L'elenco aggiornato è pubblicato sulla Trusted List italiana, consultabile sul sito AgID. Tra i prestatori più diffusi ci sono InfoCert, Aruba, Poste Italiane, Namirial e Actalis, ma l'elenco è soggetto a variazioni.
+
+La firma digitale è disponibile in due formati principali. La firma con dispositivo fisico richiede una smart card (con lettore) o un token USB che contiene il certificato qualificato e la chiave privata. Il dispositivo si collega al computer, si installa il software del prestatore e si firma il documento localmente. La firma digitale remota non richiede hardware dedicato: il certificato è custodito sui server sicuri del prestatore e l'apposizione della firma avviene via app o portale web, autorizzata con un codice OTP generato dall'app del prestatore o inviato via SMS. La firma remota è più comoda per chi firma spesso e da dispositivi diversi; la firma su dispositivo fisico offre il controllo diretto sulla chiave privata.
+
+La procedura di rilascio prevede la verifica dell'identità del richiedente — di persona, via webcam, o tramite <T id="cie">CIE</T>, SPID o CNS — e la sottoscrizione del contratto con il prestatore. I costi variano: per un kit con smart card e lettore si parte da circa 30-40 euro con validità triennale del certificato; per la firma remota, da circa 20-30 euro per tre anni. Il rinnovo del certificato ha costi inferiori ma va effettuato prima della scadenza — un certificato scaduto non consente di firmare nuovi documenti (le firme apposte in precedenza restano valide).
+
+## I formati di firma
+
+Quando firmi un documento digitalmente, il risultato può essere in diversi formati tecnici, e la scelta ha implicazioni pratiche. Il formato CAdES (file con estensione .p7m) è il più diffuso in ambito italiano: il documento firmato viene "imbustato" in un contenitore crittografico e per aprirlo serve un software di verifica (come Dike, ArubaSign, o il verificatore online di AgID). Il formato PAdES si applica ai file PDF: la firma è incorporata nel documento stesso, che resta apribile con qualsiasi lettore PDF — è il formato più comodo per la condivisione. Il formato XAdES si usa per documenti XML.
+
+Per la maggior parte degli usi pratici — contratti, istanze alla PA, documenti professionali — PAdES e CAdES sono i formati che incontrerai. Se un ente ti chiede un documento firmato digitalmente senza specificare il formato, CAdES (.p7m) è la scelta più sicura in termini di accettazione universale; se ti chiede esplicitamente un PDF firmato, usa PAdES.
+
+## Quando serve la firma digitale
+
+La firma digitale è obbligatoria in diversi contesti. Per i professionisti iscritti ad albi (avvocati, ingegneri, commercialisti, architetti, medici) è necessaria per il deposito di atti e comunicazioni presso gli ordini, i tribunali e le PA. Per le imprese, è richiesta per la sottoscrizione di bilanci, atti societari, comunicazioni al Registro delle Imprese e partecipazione a gare d'appalto. Per i cittadini, è necessaria quando una procedura richiede esplicitamente la firma autografa in forma digitale — ad esempio, la sottoscrizione di contratti a distanza, la presentazione di istanze o ricorsi, la firma di atti notarili digitali.
+
+Anche al di fuori degli obblighi, la firma digitale è utile ogni volta che vuoi dare certezza giuridica a un documento: una lettera di diffida, un accordo tra privati, una dichiarazione sostitutiva.
+
+## Cosa non è la firma digitale
+
+La firma digitale non va confusa con la <T id="pec">PEC</T>. La PEC certifica l'invio e la ricezione di un messaggio (chi ha mandato cosa, quando, e chi l'ha ricevuto), ma non autentica il contenuto del messaggio né l'identità di chi ha scritto il documento allegato. La firma digitale fa il contrario: autentica il contenuto e l'identità del firmatario, ma non certifica la trasmissione. In molte situazioni, i due strumenti si usano insieme — firmi il documento e lo invii via PEC.
+
+La firma digitale non è nemmeno la "Firma con IO" disponibile nell'app IO: quest'ultima è una firma elettronica avanzata, non qualificata, e ha un ambito d'uso più limitato (documenti inviati da enti tramite l'app).
+
+## Verifica di una firma digitale
+
+Per verificare che un documento sia stato firmato correttamente e che il certificato fosse valido al momento della firma, puoi usare il verificatore online di AgID (disponibile sul sito dell'Agenzia), oppure i software dei prestatori (Dike di InfoCert, ArubaSign di Aruba, e altri). La verifica controlla tre elementi: che la firma sia tecnicamente integra, che il certificato non fosse scaduto o revocato al momento della firma, e che il prestatore sia presente nella Trusted List.
+
+## Cosa fare
+
+Se non hai ancora una firma digitale e non ne hai bisogno immediato, non è urgente acquistarla — a differenza della PEC, non è uno strumento che serve "prima o poi" a tutti. Se invece sei un professionista, gestisci un'impresa, o prevedi di dover firmare documenti a distanza con valore legale pieno, attivala: scegli un prestatore dalla Trusted List AgID, confronta i costi e le modalità (remota vs dispositivo fisico), e completa il riconoscimento. Annota la data di scadenza del certificato e rinnova per tempo. Se hai già una firma digitale, verifica periodicamente che il software di firma sia aggiornato: le specifiche tecniche evolvono e un software non aggiornato potrebbe generare firme non conformi.

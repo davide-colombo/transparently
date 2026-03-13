@@ -1,28 +1,71 @@
 ---
 title: "SPID: cos'è, come si attiva, e perché ti serve"
-description: "Guida completa a SPID, il Sistema Pubblico di Identità Digitale: come richiederlo, quali provider scegliere, e a cosa serve."
+description: "Guida completa a SPID, il Sistema Pubblico di Identità Digitale: base normativa, livelli di autenticazione, come scegliere un provider, a cosa serve, e cosa cambia con CIE e IT Wallet."
 date: 2026-03-13
+verified: 2026-03-13
+verification_notes: "Verificato su normattiva.it, agid.gov.it, spid.gov.it. Art. 64 D.Lgs. 82/2005 (CAD), DPCM 24/10/2014, D.L. 76/2020, Reg. UE 910/2014 (eIDAS), Reg. UE 2024/1183 (eIDAS 2.0). Testi vigenti al 13/03/2026."
 category: identita-digitale
-tags: [spid, identità digitale, pubblica amministrazione]
+tags: [spid, identità digitale, pubblica amministrazione, CIE, IT Wallet]
 sources:
-  - name: "AgID — SPID"
+  - name: "D.Lgs. 82/2005 — Codice dell'Amministrazione Digitale (CAD), art. 64"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82"
+  - name: "DPCM 24 ottobre 2014 — Caratteristiche del sistema SPID"
+    url: "https://www.gazzettaufficiale.it/eli/id/2014/12/09/14A09376/sg"
+  - name: "D.L. 76/2020 — Decreto Semplificazioni"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legge:2020-07-16;76"
+  - name: "AgID — SPID e Identity Provider accreditati"
+    url: "https://www.agid.gov.it/it/piattaforme/spid"
+  - name: "Portale SPID"
     url: "https://www.spid.gov.it"
-  - name: "Agenzia per l'Italia Digitale"
-    url: "https://www.agid.gov.it"
 difficulty: base
+regional_scope: null
 draft: false
 ---
 
 import T from '../../components/T.astro';
 
-<T id="spid">SPID</T> è il Sistema Pubblico di Identità Digitale. In termini pratici, è l'insieme di credenziali che ti permette di accedere ai servizi online della Pubblica Amministrazione con un'unica identità riconosciuta. Invece di creare account diversi per ogni ente, usi sempre lo stesso accesso per entrare in aree personali, consultare documenti, presentare domande e verificare pratiche. L'obiettivo è rendere il rapporto con gli uffici pubblici più uniforme, più semplice e meno dipendente dalla presenza fisica agli sportelli. Non sostituisce strumenti come la <T id="pec">PEC</T>, che serve invece a inviare comunicazioni con valore legale.
+<T id="spid">SPID</T> è il Sistema Pubblico di Identità Digitale: un insieme di credenziali che ti permette di accedere ai servizi online della Pubblica Amministrazione e dei soggetti privati aderenti con un'unica identità riconosciuta. Invece di gestire account e password diversi per ogni ente, usi sempre lo stesso accesso — per consultare la tua posizione contributiva, presentare una domanda di bonus, prenotare un esame al <T id="fse">Fascicolo Sanitario Elettronico</T>, o accedere al portale universitario. SPID non è un semplice login, ma uno strumento giuridico: l'autenticazione ha valore legale e la tua identità è certificata da un soggetto accreditato dallo Stato. Questa guida spiega cos'è, come funziona, come ottenerlo, e qual è il suo rapporto con la <T id="cie">CIE</T> e il futuro IT Wallet.
 
-SPID prevede tre livelli di autenticazione. Il livello 1 usa nome utente e password. Il livello 2 aggiunge un secondo fattore di sicurezza, di solito un codice temporaneo oppure l'autorizzazione tramite app. Il livello 3 richiede strumenti di sicurezza ulteriori, come dispositivi fisici o procedure più forti di verifica. Nella vita quotidiana, la maggior parte dei servizi per cittadini usa soprattutto il livello 2, che è quello da considerare come standard minimo se vuoi evitare limitazioni.
+## Base normativa
 
-Per richiedere SPID devi rivolgerti a un identity provider autorizzato e vigilato da <T id="agid">AgID</T>. Tra i gestori più conosciuti ci sono Poste Italiane, Aruba, InfoCert, Lepida, Namirial, Sielte e Register.it, ma l'elenco può aggiornarsi nel tempo e conviene sempre controllare il portale ufficiale SPID prima di scegliere. La differenza tra un provider e l'altro non riguarda il valore legale dell'identità digitale, che resta lo stesso, ma le modalità di riconoscimento, i tempi di attivazione, l'eventuale costo di alcuni passaggi e gli strumenti messi a disposizione per il secondo fattore di autenticazione.
+SPID è istituito dall'articolo 64 del <T id="cad">Codice dell'Amministrazione Digitale</T> (D.Lgs. 82/2005), che prevede la creazione di un sistema pubblico per la gestione dell'identità digitale di cittadini e imprese. Le caratteristiche tecniche e organizzative del sistema sono definite dal DPCM 24 ottobre 2014, mentre i regolamenti attuativi (modalità di accreditamento dei gestori, regole tecniche, procedure di riconoscimento) sono stati emanati da <T id="agid">AgID</T> con la Determinazione 44/2015.
 
-I documenti necessari sono in genere sempre gli stessi: un documento di identità italiano in corso di validità, la tessera sanitaria o il codice fiscale, un indirizzo email e un numero di cellulare personale. Il riconoscimento può avvenire di persona, via webcam, con audio-video e bonifico, oppure tramite <T id="cie">CIE</T>, CNS o firma digitale se ne hai già una. Se vivi all'estero o sei iscritto all'AIRE, devi verificare quali provider supportano quella specifica modalità.
+Il quadro normativo si completa con il Regolamento europeo eIDAS (Reg. UE 910/2014), che stabilisce gli standard per l'identificazione elettronica e i servizi fiduciari nel mercato interno. Dal 2019, SPID è utilizzabile per accedere ai servizi pubblici di altri Paesi dell'Unione tramite il nodo eIDAS italiano. Il Decreto Semplificazioni (D.L. 76/2020) ha imposto che, dal 1° marzo 2021, tutte le pubbliche amministrazioni consentano l'accesso ai propri servizi digitali esclusivamente tramite SPID o CIE, rendendo queste le uniche modalità di identificazione informatica accettate.
 
-Una volta attivato, SPID ti serve per accedere a molti servizi che probabilmente userai spesso: l'area personale dell'<T id="agenzia-entrate">Agenzia delle Entrate</T>, i servizi <T id="inps">INPS</T>, il <T id="fse">Fascicolo Sanitario Elettronico</T>, i portali regionali per prenotazioni e referti, piattaforme universitarie, concorsi pubblici, bonus e domande amministrative di vario tipo. In altre parole, non è un accessorio tecnico: è una chiave di accesso alla vita amministrativa digitale.
+## I tre livelli di autenticazione
 
-Vale anche la pena sapere che SPID non è l'unica opzione. La Carta d'Identità Elettronica, cioè la CIE, può svolgere una funzione analoga su molti servizi pubblici e negli ultimi anni è diventata un'alternativa sempre più rilevante. Se hai già la CIE con PIN attivo e uno smartphone compatibile, potresti riuscire a usare direttamente quella. La scelta migliore dipende da quanto spesso usi i servizi online, da quanto vuoi semplificare l'accesso e dagli strumenti che hai già disponibili.
+SPID prevede tre livelli di sicurezza, definiti dal DPCM 24 ottobre 2014 in coerenza con il Regolamento eIDAS. Il livello 1 richiede nome utente e password: è sufficiente per servizi a basso rischio, come la consultazione di informazioni generiche. Il livello 2 aggiunge un secondo fattore di autenticazione — tipicamente un codice temporaneo (OTP) generato da un'app o inviato via SMS — ed è quello richiesto dalla grande maggioranza dei servizi pubblici: area personale <T id="inps">INPS</T>, <T id="agenzia-entrate">Agenzia delle Entrate</T>, portali regionali, università. Il livello 3 richiede un dispositivo fisico di sicurezza (smart card o token) ed è riservato a operazioni particolarmente sensibili.
+
+Per l'uso quotidiano, il livello 2 è lo standard di fatto. Se il tuo provider offre la scelta, assicurati di attivarlo: senza il secondo fattore, molti servizi risulteranno inaccessibili.
+
+## Come attivare SPID
+
+Per ottenere SPID devi rivolgerti a un identity provider accreditato e vigilato da AgID. I gestori attualmente attivi includono Poste Italiane, Aruba, InfoCert, Lepida, Namirial, Sielte, Register.it e TIM, ma l'elenco è soggetto a variazioni e va sempre verificato sul portale ufficiale spid.gov.it o sul sito AgID. La scelta del provider non incide sul valore legale dell'identità — che è identico per tutti — ma sulle modalità di riconoscimento offerte, sui tempi di attivazione, sull'eventuale costo di alcuni passaggi e sugli strumenti per il secondo fattore di autenticazione. L'uso di SPID, una volta attivato, è gratuito per il cittadino.
+
+I documenti necessari sono: un documento di identità italiano in corso di validità, la tessera sanitaria o il codice fiscale (o il relativo certificato di attribuzione), un indirizzo email personale e un numero di cellulare personale. SPID è strettamente individuale: per ogni identità devi usare un numero di telefono e un indirizzo email diversi, e ti conviene usare recapiti personali — non quelli di lavoro, perché la perdita di accesso a un indirizzo aziendale può compromettere l'uso di SPID.
+
+Il riconoscimento dell'identità può avvenire in diversi modi: di persona, presso gli uffici del provider o di una pubblica amministrazione abilitata come RAO (Registration Authority Office); via webcam con un operatore; tramite audio-video associato a un bonifico bancario; oppure, se ne disponi già, tramite CIE, CNS o <T id="firma-digitale">firma digitale</T>. Se sei iscritto all'AIRE e risiedi all'estero, verifica sul portale SPID quali provider supportano la tua specifica modalità di riconoscimento, perché non tutti lo fanno.
+
+## A cosa serve
+
+SPID è la chiave di accesso alla vita amministrativa digitale italiana. I servizi raggiungibili sono ormai centinaia, e quelli che userai più spesso includono: l'area personale dell'Agenzia delle Entrate (dichiarazioni, cassetto fiscale, fatture elettroniche), il portale INPS (estratto contributivo, NASpI, bonus, simulazioni pensionistiche), il Fascicolo Sanitario Elettronico, i portali regionali per prenotazioni e referti, le piattaforme universitarie, i concorsi pubblici, il Portale Automobilista, l'ANPR (Anagrafe Nazionale della Popolazione Residente) per certificati anagrafici, e <T id="pec">PEC</T> e <T id="domicilio-digitale">domicilio digitale</T> tramite INAD.
+
+SPID è utilizzabile anche per accedere a servizi di soggetti privati che hanno aderito al sistema — ad esempio piattaforme bancarie, assicurative o di firma elettronica — e, tramite il nodo eIDAS, ai servizi pubblici online di altri Paesi dell'Unione Europea.
+
+È possibile possedere più di un'identità SPID, anche con livelli di sicurezza diversi, rilasciate da provider differenti. In pratica, la maggior parte delle persone ne usa una sola.
+
+## SPID e CIE
+
+SPID non è l'unica modalità di accesso ai servizi pubblici digitali. La Carta d'Identità Elettronica (CIE) svolge una funzione analoga: contiene un microchip NFC che consente l'autenticazione online tramite l'app CieID su smartphone, con tre livelli di sicurezza corrispondenti a quelli SPID. Entrambi gli strumenti sono equiparati dalla legge per l'accesso ai servizi della PA — la scelta è di opportunità, non di valore giuridico.
+
+In termini pratici, SPID è più comodo per chi usa spesso il computer (accesso via browser con username, password e OTP), mentre la CIE è più immediata per chi preferisce lo smartphone (basta avvicinare la carta al telefono). Se hai già la CIE con PIN attivo e un telefono con NFC, puoi usare direttamente quella senza necessariamente attivare SPID.
+
+## Il futuro: IT Wallet e identità digitale europea
+
+Lo scenario dell'identità digitale italiana è in evoluzione. Il Regolamento UE 2024/1183 (eIDAS 2.0), in vigore dal maggio 2024, impone a ogni Stato membro di rendere disponibile entro dicembre 2026 almeno un portafoglio digitale (EUDI Wallet) conforme agli standard europei. In Italia il percorso passa per l'IT Wallet, istituito con il D.L. 19/2024 e integrato nell'app IO sviluppata da PagoPA. L'IT Wallet non si limita all'autenticazione: consente di conservare e presentare documenti digitali — carta d'identità, patente, tessera sanitaria, Carta Europea della Disabilità — in modo verificabile e con condivisione selettiva dei dati.
+
+SPID non verrà spento dall'oggi al domani. AgID ha rinnovato le convenzioni con gli identity provider fino al 2027, e la transizione verso CIE e IT Wallet è dichiaratamente progressiva. Tuttavia, la direzione è chiara: SPID è destinato a essere gradualmente sostituito da un sistema unico basato sulla CIE come credenziale e sull'IT Wallet come contenitore. Se oggi devi scegliere se attivare SPID, la risposta è sì — è ancora lo strumento più diffuso e più pratico per l'accesso quotidiano ai servizi — ma è utile avere anche la CIE attivata digitalmente, perché sarà lo strumento di lungo periodo.
+
+## Cosa fare
+
+Se non hai SPID, attivalo: scegli un provider dal portale spid.gov.it, prepara i documenti, completa il riconoscimento. Se hai già SPID ma non hai mai attivato il livello 2, verifica con il tuo provider come farlo — senza il secondo fattore, molti servizi non sono accessibili. In parallelo, se la tua CIE è già elettronica (emessa dal 2016 in poi), scarica l'app CieID e attiva il PIN per l'uso digitale: sarà l'accesso che ti resterà nel tempo. Annota le credenziali in un luogo sicuro, non usare recapiti di lavoro come email o telefono associati a SPID, e ricorda che SPID è personale — non condividerlo con altri, nemmeno familiari.

@@ -1,0 +1,81 @@
+---
+title: "CIE: cos'è, come usarla online, e perché è il futuro dell'identità digitale"
+description: "Guida pratica alla Carta d'Identità Elettronica: documento fisico e identità digitale, livelli di autenticazione, app CieID, PIN e PUK, e il rapporto con SPID e IT Wallet."
+date: 2026-03-13
+verified: 2026-03-13
+verification_notes: "Verificato su normattiva.it, cartaidentita.interno.gov.it. Art. 64 D.Lgs. 82/2005 (CAD), D.L. 76/2020, Reg. UE 910/2014 (eIDAS), Reg. UE 2019/1157. Testi vigenti al 13/03/2026."
+category: identita-digitale
+tags: [CIE, carta identità elettronica, identità digitale, CieID, SPID, IT Wallet]
+sources:
+  - name: "Ministero dell'Interno — Carta d'Identità Elettronica"
+    url: "https://www.cartaidentita.interno.gov.it"
+  - name: "D.Lgs. 82/2005 — CAD, art. 64"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82"
+  - name: "Reg. UE 2019/1157 — Rafforzamento della sicurezza delle carte d'identità"
+    url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32019R1157"
+  - name: "Reg. UE 910/2014 — eIDAS"
+    url: "https://eur-lex.europa.eu/legal-content/IT/TXT/?uri=CELEX%3A32014R0910"
+difficulty: base
+regional_scope: null
+draft: false
+---
+
+import T from '../../components/T.astro';
+
+La <T id="cie">CIE</T> (Carta d'Identità Elettronica) è il documento d'identità emesso dal Ministero dell'Interno che ha progressivamente sostituito la vecchia carta cartacea. Ma non è solo un documento fisico: grazie al microchip NFC integrato, la CIE funziona anche come chiave di accesso ai servizi digitali della Pubblica Amministrazione, con lo stesso valore legale di <T id="spid">SPID</T> e — a differenza di SPID — senza bisogno di registrarsi presso un provider privato. È lo Stato che certifica direttamente la tua identità. Questa guida spiega come funziona, come attivarla per l'uso digitale, e perché la CIE è destinata a diventare lo strumento centrale dell'identità digitale italiana.
+
+## Cos'è la CIE
+
+La CIE è una tessera in policarbonato delle dimensioni di una carta di credito, dotata di un microchip a radiofrequenza (NFC) che contiene i dati anagrafici del titolare, la fotografia e le impronte digitali. È emessa dal Ministero dell'Interno, prodotta dall'Istituto Poligrafico e Zecca dello Stato, e rilasciata dai Comuni. Il suo rilascio è stato progressivamente esteso a tutto il territorio nazionale a partire dal 2016, e ad oggi oltre 48 milioni di cittadini italiani ne possiedono una.
+
+La CIE è valida come documento di riconoscimento in Italia e per l'espatrio nei Paesi che accettano la carta d'identità al posto del passaporto. La durata varia in base all'età: 3 anni per i minori di 3 anni, 5 anni tra i 3 e i 18 anni, 10 anni per i maggiorenni. A partire dal 3 agosto 2026, in attuazione del Regolamento UE 2019/1157, la carta d'identità cartacea non sarà più valida nemmeno sul territorio nazionale — chi ne possiede ancora una dovrà sostituirla con la CIE.
+
+## La CIE come identità digitale
+
+Oltre alla funzione di documento fisico, la CIE è uno strumento di identità digitale riconosciuto dall'ordinamento italiano e dal Regolamento europeo eIDAS (Reg. UE 910/2014), con il massimo livello di sicurezza. L'art. 64 del <T id="cad">Codice dell'Amministrazione Digitale</T> equipara la CIE a SPID per l'accesso ai servizi online della PA: dal 1° marzo 2021, per effetto del D.L. 76/2020, tutte le pubbliche amministrazioni devono consentire l'accesso ai propri servizi digitali tramite SPID o CIE.
+
+La CIE prevede tre livelli di autenticazione, corrispondenti a quelli SPID. Il livello 1 usa credenziali (nome utente e password) create sul portale cartaidentita.it — sufficiente per servizi a basso rischio. Il livello 2 aggiunge un secondo fattore di sicurezza (OTP via app o SMS) — è lo standard per la maggior parte dei servizi pubblici. Il livello 3 richiede la lettura fisica del chip della CIE tramite NFC e l'inserimento del PIN a 8 cifre — è il livello più alto, necessario per operazioni sensibili, e corrisponde al massimo grado di garanzia previsto dal Regolamento eIDAS. Il livello 3 è una funzionalità esclusiva della CIE: SPID non lo offre nativamente.
+
+## Come richiedere la CIE
+
+La CIE si richiede al proprio Comune di residenza (o di dimora, per i cittadini non residenti) presentandosi allo sportello dell'anagrafe, in molti casi su appuntamento prenotabile online. I documenti necessari sono: la carta d'identità precedente (in caso di rinnovo), un altro documento d'identità in corso di validità (in caso di primo rilascio), il codice fiscale e una fototessera recente.
+
+Il costo è di 16,79 euro a cui si possono aggiungere diritti fissi e di segreteria variabili da Comune a Comune. La CIE non viene consegnata allo sportello: è spedita direttamente a casa tramite raccomandata entro circa 6 giorni lavorativi dalla richiesta. Al momento della richiesta, l'operatore comunale consegna la prima metà dei codici PIN e PUK; la seconda metà è contenuta nella busta che accompagna la CIE alla consegna. I due codici completi — ciascuno di 8 cifre — si ottengono unendo le due metà.
+
+Al momento della richiesta, ti verrà chiesto se vuoi fornire un indirizzo email e un numero di cellulare: fallo, perché quei recapiti sono indispensabili per attivare le credenziali di livello 1 e 2 e per recuperare il PUK in caso di smarrimento. Ti verrà inoltre chiesto se intendi esprimere il consenso o il diniego alla donazione di organi.
+
+## Come attivare la CIE per l'uso digitale
+
+Avere la CIE in mano non significa automaticamente poterla usare online. Per attivare le funzionalità digitali devi compiere due passaggi.
+
+Per i livelli 1 e 2, devi creare le credenziali CIE accedendo al portale cartaidentita.it con il codice PUK (anche solo la prima metà, subito dopo la richiesta al Comune) e i recapiti forniti. Il portale ti guiderà nella creazione di username e password e nella verifica del numero di cellulare per il secondo fattore. Dopo l'attivazione, potrai accedere ai servizi online che mostrano il pulsante "Entra con CIE" inserendo le credenziali e confermando con l'OTP.
+
+Per il livello 3, devi scaricare l'app CieID (disponibile per Android 6.0+ e iOS 13+) e registrare la tua CIE nell'app: avvicina la carta al telefono (NFC), inserisci il PIN e segui la procedura guidata. Da quel momento, per ogni accesso di livello 3, ti verrà chiesto di aprire l'app, avvicinare la CIE al telefono e inserire il PIN. In alternativa al telefono, puoi usare un computer con lettore di smart card e il software CIE scaricabile dal sito del Ministero.
+
+Le credenziali CIE sono legate alla validità della carta: alla scadenza del documento, dovrai richiedere una nuova CIE con nuovi codici PIN e PUK. Se non riesci a rinnovare in tempo, le credenziali della CIE scaduta restano utilizzabili per ulteriori 90 giorni.
+
+## PIN e PUK: cosa sono e cosa fare se li perdi
+
+Il PIN è il codice a 8 cifre che serve per autenticarti con livello 3 e per alcune operazioni sensibili (come la firma elettronica con CIE). Va inserito ogni volta che accedi a un servizio con lettura del chip. Se inserisci il PIN errato 3 volte consecutive, la carta si blocca per l'uso digitale.
+
+Il PUK è il codice a 8 cifre che serve a sbloccare il PIN dopo 3 tentativi errati e a reimpostarne uno nuovo. Se inserisci il PUK errato 10 volte consecutive, la CIE viene bloccata irreversibilmente per l'uso digitale (resta valida come documento fisico) e dovrai richiederne una nuova.
+
+Se perdi il PIN, puoi reimpostarlo dall'app CieID usando il PUK. Se perdi il PUK, puoi recuperarlo dall'app CieID — a condizione di aver fornito i recapiti (email o cellulare) al Comune in fase di richiesta. Se non hai fornito recapiti o non riesci a recuperare il PUK dall'app, devi recarti a qualsiasi Comune per richiedere la ristampa dei codici.
+
+Conserva PIN e PUK in un luogo sicuro, separati dalla CIE. Sono la chiave della tua identità digitale.
+
+## CIE e SPID: quale scegliere
+
+CIE e SPID sono equiparati dalla legge per l'accesso ai servizi della PA. La scelta tra i due è di praticità, non di valore giuridico.
+
+SPID è più comodo per l'uso frequente da browser: accedi con username, password e OTP, senza bisogno di hardware specifico. Funziona su qualsiasi dispositivo con una connessione internet. La CIE è più immediata per l'uso da smartphone — basta avvicinare la carta al telefono — e offre il livello 3 nativo, che SPID non supporta. Tuttavia, la CIE richiede un telefono con NFC (o un lettore di smart card per il computer), e l'esperienza di avvicinare fisicamente la carta al telefono a ogni accesso di livello 3 può risultare meno fluida rispetto alla conferma OTP di SPID.
+
+Nella pratica, la soluzione più robusta è avere entrambi attivi: SPID per l'uso quotidiano, CIE come backup e per le operazioni che richiedono il livello 3. Ma il contesto sta cambiando: diversi identity provider SPID hanno introdotto o annunciato canoni a pagamento, mentre l'uso digitale della CIE è gratuito e incluso nel costo del documento. La strategia nazionale punta chiaramente alla CIE come credenziale di lungo periodo, con SPID in fase di transizione progressiva — le convenzioni AgID con i provider sono state rinnovate fino al 2027.
+
+## CIE e IT Wallet
+
+La CIE è anche il documento cardine dell'IT Wallet, il portafoglio digitale integrato nell'app IO. La versione digitale della CIE è già disponibile nell'app IO come uno dei documenti del Portafoglio, e l'intero Sistema IT-Wallet — destinato a conformarsi entro dicembre 2026 al Regolamento UE 2024/1183 (eIDAS 2.0) — è costruito attorno alla CIE come credenziale di autenticazione e attestazione dell'identità. In prospettiva, la CIE sarà il documento attraverso cui il cittadino accede all'EUDI Wallet europeo, utilizzabile per dimostrare la propria identità anche nei servizi pubblici e privati degli altri Stati membri.
+
+## Cosa fare
+
+Se hai ancora una carta d'identità cartacea, sostituiscila il prima possibile — entro il 3 agosto 2026 perderà validità. Prenota l'appuntamento al tuo Comune con anticipo, perché nei mesi precedenti alla scadenza la domanda sarà concentrata. Se hai già la CIE ma non hai mai attivato le funzionalità digitali, fallo ora: crea le credenziali di livello 1 e 2 su cartaidentita.it, scarica l'app CieID e registra la carta per il livello 3. Fornisci i tuoi recapiti al Comune se non l'hai fatto al rilascio — sono necessari per il recupero del PUK. E conserva PIN e PUK: senza di essi, la CIE è solo un documento fisico.

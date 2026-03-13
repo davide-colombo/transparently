@@ -1,7 +1,7 @@
 ---
 term: "Posta Elettronica Certificata"
 definition: "Sistema di posta elettronica che certifica invio e consegna dei messaggi con effetti giuridicamente rilevanti nei casi previsti."
-relatedArticles: [spid-guida-completa]
+relatedArticles: [spid-guida-completa, pec-guida-completa, domicilio-digitale-guida-completa]
 sources:
   - name: "AgID — PEC"
     url: "https://www.agid.gov.it/it/piattaforme/posta-elettronica-certificata"

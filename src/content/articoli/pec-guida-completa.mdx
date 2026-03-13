@@ -1,0 +1,71 @@
+---
+title: "PEC: cos'è, quando serve, e come attivarla"
+description: "Guida pratica alla Posta Elettronica Certificata: a cosa serve, quando è obbligatoria, come scegliere un provider, e la differenza con l'email ordinaria."
+date: 2026-03-13
+verified: 2026-03-13
+verification_notes: "Verificato su normattiva.it, agid.gov.it. D.P.R. 68/2005, D.Lgs. 82/2005 (CAD), L. 2/2009, D.L. 76/2020. Testi vigenti al 13/03/2026."
+category: identita-digitale
+tags: [PEC, posta certificata, identità digitale, domicilio digitale, pubblica amministrazione]
+sources:
+  - name: "D.P.R. 68/2005 — Regolamento PEC"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.della.repubblica:2005-02-11;68"
+  - name: "D.Lgs. 82/2005 — Codice dell'Amministrazione Digitale (CAD)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-03-07;82"
+  - name: "AgID — Posta Elettronica Certificata"
+    url: "https://www.agid.gov.it/it/piattaforme/posta-elettronica-certificata"
+  - name: "Indice dei domicili digitali della PA e dei gestori di pubblici servizi (IPA)"
+    url: "https://www.indicepa.gov.it"
+difficulty: base
+regional_scope: null
+draft: false
+---
+
+import T from '../../components/T.astro';
+
+La <T id="pec">PEC</T> (Posta Elettronica Certificata) è uno strumento che molti italiani attivano solo quando sono costretti — per inviare una raccomandata digitale al comune, per rispondere a una comunicazione dell'<T id="agenzia-entrate">Agenzia delle Entrate</T>, o perché un datore di lavoro la richiede. Eppure è uno degli strumenti più potenti dell'infrastruttura digitale italiana, perché ha lo stesso valore legale di una raccomandata con ricevuta di ritorno. Questa guida spiega cos'è, quando serve davvero, come attivarla, e cosa cambia con l'introduzione del domicilio digitale.
+
+## Cos'è la PEC
+
+La PEC è un sistema di posta elettronica che garantisce al mittente la prova legale dell'invio e della consegna del messaggio. Quando invii una PEC, il gestore del servizio ti rilascia due ricevute: una ricevuta di accettazione (che certifica che il tuo messaggio è stato inviato) e una ricevuta di avvenuta consegna (che certifica che il messaggio è stato recapitato nella casella del destinatario). Queste ricevute hanno valore legale: in un eventuale contenzioso, dimostrano che la comunicazione è stata inviata e ricevuta, con data e ora certe.
+
+La disciplina della PEC è contenuta nel <T id="dpr-68-2005">D.P.R. 68/2005</T> e nel <T id="cad">Codice dell'Amministrazione Digitale</T> (D.Lgs. 82/2005). I gestori di PEC devono essere accreditati presso l'<T id="agid">AgID</T> (Agenzia per l'Italia Digitale) e rispettare standard tecnici e di sicurezza definiti dalla normativa.
+
+Un punto fondamentale: la PEC ha valore legale pieno solo quando sia il mittente sia il destinatario usano una casella PEC. Se invii una PEC a un indirizzo email ordinario, hai la prova dell'invio ma non la certezza della consegna. Se invii un'email ordinaria a una PEC, il messaggio potrebbe non essere nemmeno accettato dal sistema.
+
+## Quando serve la PEC
+
+La PEC è necessaria in diverse situazioni concrete della vita di un cittadino.
+
+Nelle comunicazioni con la Pubblica Amministrazione, la PEC è il canale privilegiato. Tutti gli enti pubblici hanno un indirizzo PEC (consultabile sull'Indice delle Pubbliche Amministrazioni, indicepa.gov.it) e molte procedure richiedono esplicitamente l'invio tramite PEC: richieste di accesso agli atti, comunicazioni fiscali, istanze amministrative.
+
+Per i professionisti iscritti a un ordine o collegio professionale (avvocati, ingegneri, commercialisti, medici, architetti) la PEC è obbligatoria per legge. Lo stesso vale per le imprese iscritte al Registro delle Imprese e per le società. L'indirizzo PEC è pubblicato nel registro INI-PEC consultabile gratuitamente.
+
+Per i privati cittadini la PEC non è obbligatoria, ma è fortemente raccomandata in diverse circostanze: contestazioni formali (reclami a operatori telefonici, compagnie assicurative, fornitori di servizi), disdette contrattuali con valore legale, comunicazioni con enti pubblici, e qualsiasi situazione in cui serve una prova certa dell'invio e della ricezione.
+
+Nel contesto lavorativo, la PEC viene utilizzata per comunicazioni formali tra lavoratore e datore di lavoro, per l'invio di documenti all'<T id="inps">INPS</T> o all'<T id="inail">INAIL</T>, e in alcune procedure relative al rapporto di lavoro.
+
+## Come attivare una PEC
+
+Per attivare una casella PEC devi rivolgerti a un gestore accreditato presso AgID. I principali gestori sono: Aruba PEC, Poste Italiane (PosteCert), InfoCert (Legalmail), Register.it, e TIM (TIM PEC). La lista completa dei gestori accreditati è pubblicata sul sito di AgID.
+
+La procedura è semplice: scegli un gestore, ti registri online, fornisci un documento di identità per la verifica, scegli il tuo indirizzo PEC, e paghi il canone annuale. I costi variano da gestore a gestore ma si collocano generalmente tra 5 e 15 euro all'anno per una casella base destinata a un privato. Alcuni gestori offrono il primo anno gratuito.
+
+Al momento dell'attivazione ti viene richiesta un'autenticazione forte — tipicamente tramite <T id="spid">SPID</T> o <T id="cie">CIE</T> — che garantisce la corrispondenza tra l'identità del titolare e la casella PEC. Questo è un requisito essenziale perché la PEC abbia valore legale pieno.
+
+## PEC e domicilio digitale
+
+Il <T id="cad">Codice dell'Amministrazione Digitale</T> ha introdotto il concetto di <T id="domicilio-digitale">domicilio digitale</T>: un indirizzo elettronico eletto dal cittadino presso cui la Pubblica Amministrazione può inviare comunicazioni con valore legale. Per i privati cittadini, il domicilio digitale si elegge tramite l'Indice Nazionale dei Domicili Digitali (INAD), accessibile con SPID o CIE dal sito inad.gov.it.
+
+L'elezione del domicilio digitale è volontaria per i privati cittadini ma ha un effetto importante: una volta eletto, le comunicazioni inviate dalla PA al tuo domicilio digitale hanno pieno valore legale di notifica, anche se non le leggi. È l'equivalente digitale della raccomandata depositata all'ufficio postale: la consegna si perfeziona indipendentemente dalla lettura. Per questo motivo, se eleggi un domicilio digitale, è essenziale che tu controlli regolarmente la casella PEC associata.
+
+Per i professionisti e le imprese, l'elezione del domicilio digitale tramite PEC è obbligatoria e avviene automaticamente attraverso gli indici professionali (INI-PEC) e il Registro delle Imprese.
+
+## Cosa non è la PEC
+
+La PEC non è un sostituto dell'email ordinaria per le comunicazioni quotidiane. È uno strumento giuridico, pensato per le comunicazioni che richiedono prova legale. Non è particolarmente comoda per l'uso quotidiano: le caselle PEC hanno spesso limiti di spazio ridotti, l'interfaccia dei gestori non è sempre intuitiva, e i messaggi PEC contengono buste elettroniche e certificati che li rendono meno leggibili di un'email normale.
+
+La PEC non è nemmeno un sistema di firma digitale. Certifica l'invio e la ricezione di un messaggio, ma non autentica il contenuto del messaggio stesso. Se devi firmare un documento con valore legale, serve una <T id="firma-digitale">firma digitale</T>, che è uno strumento diverso.
+
+## Cosa fare
+
+Se non hai ancora una PEC, valuta di attivarla — il costo è minimo e prima o poi ne avrai bisogno. Scegli un gestore accreditato AgID, confronta i costi annuali e le funzionalità (spazio, accesso da app, notifiche). Dopo l'attivazione, valuta se eleggere il tuo domicilio digitale su INAD: è un passo in più che semplifica le comunicazioni con la PA, ma richiede che tu controlli la casella regolarmente. Conserva sempre le ricevute di accettazione e consegna dei messaggi PEC che invii: sono la tua prova legale. Infine, annota le credenziali in un luogo sicuro e ricorda la data di scadenza del servizio: se il canone non viene rinnovato, la casella viene disattivata e potresti perdere le comunicazioni in arrivo.

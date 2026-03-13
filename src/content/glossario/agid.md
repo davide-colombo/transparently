@@ -1,7 +1,7 @@
 ---
 term: "Agenzia per l'Italia Digitale"
 definition: "Agenzia pubblica che coordina e indirizza lo sviluppo dei servizi digitali della Pubblica Amministrazione italiana."
-relatedArticles: [spid-guida-completa]
+relatedArticles: [spid-guida-completa, app-io-guida-completa, firma-digitale-guida-completa]
 sources:
   - name: "Agenzia per l'Italia Digitale"
     url: "https://www.agid.gov.it"
