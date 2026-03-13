@@ -12,6 +12,9 @@ export const collections = {
       description: z.string(),
       date: z.date(),
       updated: z.date().optional(),
+      verified: z.date().optional(),
+      verification_notes: z.string().optional(),
+      regional_scope: z.string().nullable().default(null),
       category: z.enum([
         'contratti-lavoro',
         'identita-digitale',
