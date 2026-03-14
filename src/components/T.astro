@@ -68,6 +68,11 @@ const source = entry?.data.sources?.[0];
     text-decoration-color: var(--color-accent);
     text-decoration-thickness: 1px;
     text-underline-offset: 0.18em;
+    transition: color 150ms ease;
+  }
+
+  .termine-trigger:hover {
+    color: var(--color-accent);
   }
 
   .termine-trigger:focus-visible {
@@ -125,6 +130,10 @@ const source = entry?.data.sources?.[0];
     color: var(--color-accent);
   }
 
+  .termine-popup-links a:hover {
+    opacity: 0.8;
+  }
+
   .termine-popup-close {
     position: absolute;
     top: 6px;
@@ -136,6 +145,11 @@ const source = entry?.data.sources?.[0];
     font: inherit;
     line-height: 1;
     padding: 0;
+    transition: color 150ms ease;
+  }
+
+  .termine-popup-close:hover {
+    color: var(--color-accent);
   }
 </style>
 

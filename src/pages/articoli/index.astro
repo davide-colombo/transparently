@@ -89,7 +89,10 @@ const articleGroups = [
       <p class="text-[0.72rem] uppercase tracking-[0.2em] text-ink/55">Indice rapido</p>
       <div class="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm leading-6">
         {articleGroups.map((group) => (
-          <a href={`#${group.id}`} class="font-medium text-accent">
+          <a
+            href={`#${group.id}`}
+            class="font-medium text-ink/72 transition-colors duration-150 hover:text-accent"
+          >
             {group.label}
           </a>
         ))}

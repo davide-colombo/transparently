@@ -45,6 +45,7 @@
     color: var(--color-accent);
     text-decoration-thickness: 0.08em;
     text-underline-offset: 0.18em;
+    transition: color 150ms ease, opacity 150ms ease;
   }
 
   ::selection {
@@ -95,5 +96,9 @@
 
   .article-body a {
     color: var(--color-accent);
+  }
+
+  .article-body a:hover {
+    opacity: 0.8;
   }
 }

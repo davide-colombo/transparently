@@ -53,9 +53,9 @@ const categoryLabels = {
           {relatedArticles.map((article) => (
             <a
               href={`/articoli/${article.id}`}
-              class="block border-l border-divider pl-4 no-underline transition hover:border-accent"
+              class="group block border-l border-divider pl-4 no-underline"
             >
-              <span class="block font-serif text-2xl leading-tight text-ink hover:text-accent">
+              <span class="block font-serif text-2xl leading-tight text-ink transition-colors duration-150 group-hover:text-accent">
                 {article.data.title}
               </span>
               <span class="mt-1 block text-sm leading-7 text-ink/72">{article.data.description}</span>
