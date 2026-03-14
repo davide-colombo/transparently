@@ -63,7 +63,9 @@ const groupedEntries = categoryOrder
       {groupedEntries.map((group) => (
         <section id={group.category} class="scroll-mt-28">
           <div class="mb-6 border-t border-divider pt-6">
-            <h2 class="font-serif text-4xl tracking-tight text-ink">{group.label}</h2>
+            <h2 class="border-l-4 border-accent pl-4 font-serif text-4xl tracking-tight text-ink">
+              {group.label}
+            </h2>
           </div>
           <div>
             {group.entries.map((entry) => (
