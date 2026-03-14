@@ -3,9 +3,69 @@ import { getCollection } from 'astro:content';
 import ArticleCard from '../../components/ArticleCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const articles = (await getCollection('articoli', ({ data }) => !data.draft)).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
+const articles = await getCollection('articoli', ({ data }) => !data.draft);
+const articlesById = new Map(articles.map((article) => [article.id, article]));
+
+const getArticle = (id: string) => {
+  const article = articlesById.get(id);
+
+  if (!article) {
+    throw new Error(`Missing articoli entry: ${id}`);
+  }
+
+  return article;
+};
+
+const articleGroups = [
+  {
+    id: 'universita',
+    label: 'Università',
+    articleIds: [
+      'universita-iscrizione-guida',
+      'studente-fuorisede-residenza-medico',
+      'borse-studio-dsu-domanda',
+    ],
+  },
+  {
+    id: 'stage-tirocinio',
+    label: 'Stage e tirocinio',
+    articleIds: [
+      'stage-tirocinio-guida-completa',
+      'stage-curriculare-vs-extracurriculare',
+      'indennita-stage-regioni',
+      'stage-irregolare-come-riconoscerlo',
+      'apprendistato-vs-stage',
+    ],
+  },
+  {
+    id: 'contratti-lavoro',
+    label: 'Contratti di lavoro',
+    articleIds: [
+      'contratto-tempo-determinato',
+      'contratto-tempo-indeterminato',
+      'come-leggere-busta-paga',
+      'periodo-di-prova',
+      'dimissioni-telematiche',
+      'tfr-guida-completa',
+    ],
+  },
+  {
+    id: 'identita-digitale',
+    label: 'Identità digitale',
+    articleIds: [
+      'spid-guida-completa',
+      'cie-guida-completa',
+      'pec-guida-completa',
+      'app-io-guida-completa',
+      'firma-digitale-guida-completa',
+      'domicilio-digitale-guida-completa',
+      'pagopa-guida-completa',
+    ],
+  },
+].map((group) => ({
+  ...group,
+  articles: group.articleIds.map(getArticle),
+}));
 ---
 
 <BaseLayout
@@ -25,16 +85,36 @@ const articles = (await getCollection('articoli', ({ data }) => !data.draft)).so
       </p>
     </div>
 
-    <div class="mt-12">
-      {articles.map((article) => (
-        <ArticleCard
-          href={`/articoli/${article.id}`}
-          title={article.data.title}
-          description={article.data.description}
-          date={article.data.date}
-          category={article.data.category}
-          difficulty={article.data.difficulty}
-        />
+    <nav class="mt-10 border-t border-divider pt-6" aria-label="Indice rapido articoli">
+      <p class="text-[0.72rem] uppercase tracking-[0.2em] text-ink/55">Indice rapido</p>
+      <div class="mt-4 flex flex-wrap gap-x-6 gap-y-3 text-sm leading-6">
+        {articleGroups.map((group) => (
+          <a href={`#${group.id}`} class="font-medium text-accent">
+            {group.label}
+          </a>
+        ))}
+      </div>
+    </nav>
+
+    <div class="mt-12 space-y-16">
+      {articleGroups.map((group) => (
+        <section id={group.id} class="scroll-mt-28">
+          <div class="mb-6 border-t border-divider pt-6">
+            <h2 class="font-serif text-4xl tracking-tight text-ink">{group.label}</h2>
+          </div>
+          <div>
+            {group.articles.map((article) => (
+              <ArticleCard
+                href={`/articoli/${article.id}`}
+                title={article.data.title}
+                description={article.data.description}
+                date={article.data.date}
+                category={article.data.category}
+                difficulty={article.data.difficulty}
+              />
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   </section>
