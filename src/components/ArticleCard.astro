@@ -4,7 +4,12 @@ interface Props {
   title: string;
   description: string;
   date: Date;
-  category: 'contratti-lavoro' | 'identita-digitale' | 'fisco-previdenza' | 'sanita';
+  category:
+    | 'contratti-lavoro'
+    | 'identita-digitale'
+    | 'fisco-previdenza'
+    | 'sanita'
+    | 'universita';
   difficulty: 'base' | 'intermedio' | 'avanzato';
 }
 
@@ -15,6 +20,7 @@ const categoryLabels = {
   'identita-digitale': 'Identità digitale',
   'fisco-previdenza': 'Fisco e previdenza',
   sanita: 'Sanità',
+  universita: 'Università',
 } as const;
 
 const difficultyLabels = {

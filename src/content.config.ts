@@ -20,6 +20,7 @@ export const collections = {
         'identita-digitale',
         'fisco-previdenza',
         'sanita',
+        'universita',
       ]),
       tags: z.array(z.string()).default([]),
       sources: z.array(
