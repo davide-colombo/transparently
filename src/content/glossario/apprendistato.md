@@ -1,8 +1,14 @@
 ---
-term: "Apprendistato"
-definition: "Contratto di lavoro subordinato a tempo indeterminato finalizzato alla formazione e all'occupazione dei giovani, con obbligo formativo per il datore di lavoro e sgravi contributivi."
-relatedArticles: [apprendistato-vs-stage]
+term: Apprendistato
+definition: Contratto di lavoro subordinato a tempo indeterminato finalizzato alla formazione e all'occupazione dei giovani, con obblighi formativi e agevolazioni contributive per il datore.
+relatedArticles:
+  - apprendistato-vs-stage
+  - contratto-tempo-indeterminato
+  - contributi-inps-guida-completa
 category: contratti-lavoro
+sources:
+  - name: "D.Lgs. 81/2015 — artt. 41–47 (Apprendistato)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2015-06-15;81"
 ---
 
-L'apprendistato è un contratto di lavoro subordinato a tempo indeterminato, disciplinato dal Capo V del D.Lgs. 81/2015. A differenza del tirocinio, l'apprendista è un dipendente a tutti gli effetti: ha diritto alla retribuzione prevista dal CCNL, matura ferie, permessi, TFR e contributi previdenziali. L'elemento distintivo è la componente formativa obbligatoria: il datore di lavoro si impegna a garantire un percorso di formazione, e in cambio beneficia di sgravi contributivi. Esistono tre tipologie: apprendistato di primo livello (15–25 anni, per il conseguimento di titoli di studio), professionalizzante (18–29 anni, il più diffuso), e di alta formazione e ricerca (18–29 anni, per titoli universitari e attività di ricerca). La durata massima è generalmente 3 anni. Fonte: [D.Lgs. 81/2015](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2015-06-15;81), [Ministero del Lavoro — Apprendistato](https://www.lavoro.gov.it/temi-e-priorita/orientamento-e-formazione/focus-on/apprendistato/pagine/default).
+L'apprendistato è un contratto di lavoro subordinato a tempo indeterminato che prevede un periodo formativo obbligatorio, disciplinato dagli artt. 41–47 del [D.Lgs. 81/2015](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2015-06-15;81). Esistono tre tipologie: apprendistato per la qualifica e il diploma professionale (15–25 anni), apprendistato professionalizzante (18–29 anni, il più diffuso) e apprendistato di alta formazione e ricerca. A differenza del [tirocinio](/glossario/tirocinio), l'apprendistato è un vero rapporto di lavoro: il lavoratore ha diritto a retribuzione secondo il [CCNL](/glossario/ccnl), a ferie, [TFR](/glossario/tfr), [contributi previdenziali](/glossario/contributi-inps) e tutele contro il licenziamento. Il datore beneficia di aliquote contributive ridotte per tutta la durata del periodo formativo.
