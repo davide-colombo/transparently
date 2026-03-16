@@ -127,16 +127,17 @@ const { title, url, description = '', variant } = Astro.props;
     justify-content: center;
     width: 32px;
     height: 32px;
-    border: 1px solid #d4d4d4;
-    border-radius: 6px;
-    background: transparent;
-    color: #525252;
+    border: 1px solid var(--color-accent);
+    border-radius: 999px;
+    background: var(--color-accent);
+    color: var(--color-paper);
     cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
   }
   .share-inline-btn:hover {
-    color: #0A0A0A;
-    border-color: #0A0A0A;
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
   }
   .share-panel {
     position: absolute;
@@ -146,10 +147,10 @@ const { title, url, description = '', variant } = Astro.props;
     display: flex;
     gap: 4px;
     padding: 6px 8px;
-    background: #FAFAFA;
-    border: 1px solid #d4d4d4;
+    background: var(--color-paper);
+    border: 1px solid var(--color-divider);
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--color-ink) 8%, transparent);
     z-index: 50;
   }
   .share-panel--hidden {
@@ -162,7 +163,7 @@ const { title, url, description = '', variant } = Astro.props;
     width: 32px;
     height: 32px;
     border-radius: 6px;
-    color: #525252;
+    color: var(--color-accent);
     text-decoration: none;
     border: none;
     background: transparent;
@@ -170,20 +171,20 @@ const { title, url, description = '', variant } = Astro.props;
     transition: color 0.15s, background-color 0.15s;
   }
   .share-link:hover {
-    color: #0A0A0A;
-    background: #F0F0F0;
+    color: var(--color-paper);
+    background: var(--color-accent);
   }
 
   /* ── Block variant (bottom of article) ── */
   .share-block {
     margin: 2.5rem 0;
     padding: 1.5rem 0;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--color-divider);
   }
   .share-block-text {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 0.95rem;
-    color: #525252;
+    color: color-mix(in srgb, var(--color-ink) 72%, var(--color-paper));
     margin: 0 0 1rem 0;
   }
   .share-block-buttons {
@@ -194,19 +195,20 @@ const { title, url, description = '', variant } = Astro.props;
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    border: 1px solid #1A3A5C;
+    border: 1px solid var(--color-accent);
     border-radius: 6px;
-    background: transparent;
-    color: #1A3A5C;
+    background: var(--color-accent);
+    color: var(--color-paper);
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 0.875rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background-color 0.15s, color 0.15s;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
   }
   .share-native-btn:hover {
-    background: #1A3A5C;
-    color: #FAFAFA;
+    background: var(--color-ink);
+    border-color: var(--color-ink);
+    color: var(--color-paper);
   }
   .share-fallback {
     display: flex;
@@ -221,10 +223,10 @@ const { title, url, description = '', variant } = Astro.props;
     align-items: center;
     gap: 6px;
     padding: 8px 14px;
-    border: 1px solid #d4d4d4;
+    border: 1px solid var(--color-accent);
     border-radius: 6px;
-    background: transparent;
-    color: #525252;
+    background: var(--color-accent);
+    color: var(--color-paper);
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 0.8125rem;
     font-weight: 450;
@@ -233,21 +235,21 @@ const { title, url, description = '', variant } = Astro.props;
     transition: color 0.15s, border-color 0.15s, background-color 0.15s;
   }
   .share-fallback-btn:hover {
-    color: #0A0A0A;
-    border-color: #0A0A0A;
-    background: #F0F0F0;
+    color: var(--color-paper);
+    border-color: var(--color-ink);
+    background: var(--color-ink);
   }
 
   /* ── About variant ── */
   .share-about {
     margin: 3rem 0 0 0;
     padding: 2rem 0 0 0;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid var(--color-divider);
   }
   .share-about-text {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 1rem;
-    color: #0A0A0A;
+    color: var(--color-ink);
     margin: 0 0 1.25rem 0;
   }
 
@@ -255,7 +257,7 @@ const { title, url, description = '', variant } = Astro.props;
   .share-copied-feedback {
     font-family: 'IBM Plex Sans', sans-serif;
     font-size: 0.75rem;
-    color: #1A3A5C;
+    color: var(--color-accent);
     margin-left: 8px;
     animation: fadeIn 0.15s ease-out;
   }
