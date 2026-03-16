@@ -1,0 +1,393 @@
+---
+interface Props {
+  title: string;
+  url: string;
+  description?: string;
+  variant: 'inline' | 'block' | 'about';
+}
+
+const { title, url, description = '', variant } = Astro.props;
+---
+
+{variant === 'inline' && (
+  <span class="share-inline" data-share-title={title} data-share-url={url} data-share-description={description}>
+    <button class="share-inline-btn" aria-label="Condividi questo articolo" type="button">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+    </button>
+    <div class="share-panel share-panel--hidden">
+      <a class="share-link" data-channel="whatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Condividi su WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a class="share-link" data-channel="telegram" href="#" target="_blank" rel="noopener noreferrer" aria-label="Condividi su Telegram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+      </a>
+      <a class="share-link" data-channel="linkedin" href="#" target="_blank" rel="noopener noreferrer" aria-label="Condividi su LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="share-link" data-channel="twitter" href="#" target="_blank" rel="noopener noreferrer" aria-label="Condividi su X">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+      </a>
+      <a class="share-link" data-channel="email" href="#" aria-label="Condividi via email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+      <button class="share-link" data-channel="copy" type="button" aria-label="Copia link">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </button>
+    </div>
+  </span>
+)}
+
+{variant === 'block' && (
+  <div class="share-block" data-share-title={title} data-share-url={url} data-share-description={description}>
+    <p class="share-block-text">Questa guida ti è stata utile? Condividila con chi potrebbe averne bisogno.</p>
+    <div class="share-block-buttons">
+      <button class="share-native-btn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Condividi
+      </button>
+      <div class="share-fallback share-fallback--hidden">
+        <a class="share-fallback-btn" data-channel="whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-fallback-btn" data-channel="telegram" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </a>
+        <a class="share-fallback-btn" data-channel="linkedin" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="share-fallback-btn" data-channel="twitter" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          X
+        </a>
+        <a class="share-fallback-btn" data-channel="email" href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <button class="share-fallback-btn" data-channel="copy" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Copia link
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+{variant === 'about' && (
+  <div class="share-about" data-share-title="Transparently — La burocrazia italiana, spiegata." data-share-url="https://transparently.vercel.app" data-share-description="Guida civica indipendente alla burocrazia italiana: contratti, fisco, identità digitale, sanità. Fonti ufficiali, linguaggio chiaro.">
+    <p class="share-about-text">Transparently è un progetto indipendente. Se pensi che possa essere utile a qualcuno, condividilo.</p>
+    <div class="share-block-buttons">
+      <button class="share-native-btn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+        Condividi
+      </button>
+      <div class="share-fallback share-fallback--hidden">
+        <a class="share-fallback-btn" data-channel="whatsapp" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a class="share-fallback-btn" data-channel="telegram" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+        </a>
+        <a class="share-fallback-btn" data-channel="linkedin" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="share-fallback-btn" data-channel="twitter" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          X
+        </a>
+        <a class="share-fallback-btn" data-channel="email" href="#">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Email
+        </a>
+        <button class="share-fallback-btn" data-channel="copy" type="button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          Copia link
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
+<style>
+  /* ── Inline variant (near title) ── */
+  .share-inline {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: middle;
+  }
+  .share-inline-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    background: transparent;
+    color: #525252;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .share-inline-btn:hover {
+    color: #0A0A0A;
+    border-color: #0A0A0A;
+  }
+  .share-panel {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 4px;
+    padding: 6px 8px;
+    background: #FAFAFA;
+    border: 1px solid #d4d4d4;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    z-index: 50;
+  }
+  .share-panel--hidden {
+    display: none;
+  }
+  .share-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    color: #525252;
+    text-decoration: none;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.15s, background-color 0.15s;
+  }
+  .share-link:hover {
+    color: #0A0A0A;
+    background: #F0F0F0;
+  }
+
+  /* ── Block variant (bottom of article) ── */
+  .share-block {
+    margin: 2.5rem 0;
+    padding: 1.5rem 0;
+    border-top: 1px solid #e5e5e5;
+  }
+  .share-block-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.95rem;
+    color: #525252;
+    margin: 0 0 1rem 0;
+  }
+  .share-block-buttons {
+    position: relative;
+  }
+  .share-native-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    border: 1px solid #1A3A5C;
+    border-radius: 6px;
+    background: transparent;
+    color: #1A3A5C;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s;
+  }
+  .share-native-btn:hover {
+    background: #1A3A5C;
+    color: #FAFAFA;
+  }
+  .share-fallback {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .share-fallback--hidden {
+    display: none;
+  }
+  .share-fallback-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    background: transparent;
+    color: #525252;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 450;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, background-color 0.15s;
+  }
+  .share-fallback-btn:hover {
+    color: #0A0A0A;
+    border-color: #0A0A0A;
+    background: #F0F0F0;
+  }
+
+  /* ── About variant ── */
+  .share-about {
+    margin: 3rem 0 0 0;
+    padding: 2rem 0 0 0;
+    border-top: 1px solid #e5e5e5;
+  }
+  .share-about-text {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    color: #0A0A0A;
+    margin: 0 0 1.25rem 0;
+  }
+
+  /* ── Copy feedback ── */
+  .share-copied-feedback {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 0.75rem;
+    color: #1A3A5C;
+    margin-left: 8px;
+    animation: fadeIn 0.15s ease-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+
+<script>
+  function initShareButtons() {
+    function getShareData(el) {
+      const container = el.closest('[data-share-title]');
+      if (!container) return null;
+      return {
+        title: container.dataset.shareTitle || '',
+        url: container.dataset.shareUrl || window.location.href,
+        text: container.dataset.shareDescription || '',
+      };
+    }
+
+    function buildHref(channel, data) {
+      const fullText = data.title + (data.text ? ' — ' + data.text : '');
+      switch (channel) {
+        case 'whatsapp':
+          return 'https://wa.me/?text=' + encodeURIComponent(fullText + ' ' + data.url);
+        case 'telegram':
+          return 'https://t.me/share/url?url=' + encodeURIComponent(data.url) + '&text=' + encodeURIComponent(fullText);
+        case 'linkedin':
+          return 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(data.url);
+        case 'twitter':
+          return 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(data.url) + '&text=' + encodeURIComponent(fullText);
+        case 'email':
+          return 'mailto:?subject=' + encodeURIComponent(data.title) + '&body=' + encodeURIComponent((data.text ? data.text + '\n\n' : '') + data.url);
+        default:
+          return '#';
+      }
+    }
+
+    // ── Inline variant: toggle panel ──
+    document.querySelectorAll('.share-inline-btn').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var data = getShareData(btn);
+        if (!data) return;
+
+        if (navigator.share) {
+          navigator.share({ title: data.title, text: data.text, url: data.url }).catch(function() {});
+          return;
+        }
+
+        var panel = btn.parentElement.querySelector('.share-panel');
+        var isHidden = panel.classList.contains('share-panel--hidden');
+
+        // Close all other panels
+        document.querySelectorAll('.share-panel').forEach(function(p) {
+          p.classList.add('share-panel--hidden');
+        });
+
+        if (isHidden) {
+          // Set hrefs
+          panel.querySelectorAll('[data-channel]').forEach(function(link) {
+            var ch = link.dataset.channel;
+            if (ch !== 'copy') {
+              link.href = buildHref(ch, data);
+            }
+          });
+          panel.classList.remove('share-panel--hidden');
+        }
+      });
+    });
+
+    // ── Block / About variant: native share or show fallback ──
+    document.querySelectorAll('.share-native-btn').forEach(function(btn) {
+      var data = getShareData(btn);
+      if (!data) return;
+
+      if (navigator.share) {
+        btn.addEventListener('click', function() {
+          navigator.share({ title: data.title, text: data.text, url: data.url }).catch(function() {});
+        });
+      } else {
+        // Hide native button, show fallback
+        var fallback = btn.parentElement.querySelector('.share-fallback');
+        btn.style.display = 'none';
+        fallback.classList.remove('share-fallback--hidden');
+
+        // Set hrefs
+        fallback.querySelectorAll('[data-channel]').forEach(function(link) {
+          var ch = link.dataset.channel;
+          if (ch !== 'copy') {
+            link.href = buildHref(ch, data);
+          }
+        });
+      }
+    });
+
+    // ── Copy link handler ──
+    document.querySelectorAll('[data-channel="copy"]').forEach(function(btn) {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        var data = getShareData(btn);
+        if (!data) return;
+
+        navigator.clipboard.writeText(data.url).then(function() {
+          // Remove any existing feedback
+          var existing = btn.parentElement.querySelector('.share-copied-feedback');
+          if (existing) existing.remove();
+
+          var feedback = document.createElement('span');
+          feedback.className = 'share-copied-feedback';
+          feedback.textContent = 'Copiato!';
+          btn.after(feedback);
+          setTimeout(function() { feedback.remove(); }, 2000);
+        }).catch(function() {});
+      });
+    });
+
+    // ── Close inline panels on outside click ──
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.share-panel').forEach(function(p) {
+        p.classList.add('share-panel--hidden');
+      });
+    });
+
+    // Prevent panel clicks from closing
+    document.querySelectorAll('.share-panel').forEach(function(p) {
+      p.addEventListener('click', function(e) { e.stopPropagation(); });
+    });
+  }
+
+  // Run on load and on Astro page transitions
+  initShareButtons();
+  document.addEventListener('astro:after-swap', initShareButtons);
+</script>

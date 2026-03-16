@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import CallToAction from '../../components/CallToAction.astro';
+import ShareButton from '../../components/ShareButton.astro';
 import SourcesSection from '../../components/SourcesSection.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -44,6 +45,15 @@ const formattedUpdated = article.data.updated
   : null;
 
 const shouldShowCta = ['contratti-lavoro', 'fisco-previdenza'].includes(article.data.category);
+const articleUrl = `https://transparently.vercel.app/articoli/${article.id}`;
+const articlesWithEmbeddedFooter = new Set([
+  '730-precompilato-guida-completa',
+  'certificazione-unica-guida-completa',
+  'contributi-inps-guida-completa',
+  'fondo-pensione-guida-completa',
+  'isee-guida-completa',
+]);
+const hasEmbeddedFooter = articlesWithEmbeddedFooter.has(article.id);
 ---
 
 <BaseLayout
@@ -60,6 +70,12 @@ const shouldShowCta = ['contratti-lavoro', 'fisco-previdenza'].includes(article.
         <span>{difficultyLabels[article.data.difficulty]}</span>
         <time datetime={article.data.date.toISOString()}>{formattedDate}</time>
         {formattedUpdated && <span>Aggiornato {formattedUpdated}</span>}
+        <ShareButton
+          title={article.data.title}
+          url={articleUrl}
+          description={article.data.description}
+          variant="inline"
+        />
       </div>
 
       <h1 class="mt-6 font-serif text-5xl leading-[0.96] tracking-tight text-ink md:text-[4.2rem]">
@@ -74,14 +90,30 @@ const shouldShowCta = ['contratti-lavoro', 'fisco-previdenza'].includes(article.
       <Content />
     </div>
 
-    <footer class="mt-12">
-      {shouldShowCta && (
-        <div>
-          <CallToAction />
-        </div>
-      )}
+    {hasEmbeddedFooter ? (
+      <ShareButton
+        title={article.data.title}
+        url={articleUrl}
+        description={article.data.description}
+        variant="block"
+      />
+    ) : (
+      <footer class="mt-12">
+        {shouldShowCta && (
+          <div>
+            <CallToAction />
+          </div>
+        )}
 
-      <SourcesSection sources={article.data.sources} />
-    </footer>
+        <SourcesSection sources={article.data.sources} />
+
+        <ShareButton
+          title={article.data.title}
+          url={articleUrl}
+          description={article.data.description}
+          variant="block"
+        />
+      </footer>
+    )}
   </article>
 </BaseLayout>
