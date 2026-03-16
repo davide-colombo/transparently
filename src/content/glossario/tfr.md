@@ -1,7 +1,7 @@
 ---
 term: "Trattamento di Fine Rapporto"
 definition: "Quota di retribuzione che matura durante il rapporto di lavoro e viene liquidata, di regola, alla sua cessazione."
-relatedArticles: [contratto-tempo-determinato]
+relatedArticles: [contratto-tempo-determinato, fondo-pensione-guida-completa, certificazione-unica-guida-completa]
 sources:
   - name: "INPS"
     url: "https://www.inps.it"

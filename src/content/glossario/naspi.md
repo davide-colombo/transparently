@@ -1,7 +1,7 @@
 ---
 term: "NASpI — Nuova Assicurazione Sociale per l'Impiego"
 definition: "Indennità di disoccupazione erogata dall'INPS ai lavoratori dipendenti che perdono involontariamente il lavoro, a condizione di requisiti contributivi e lavorativi."
-relatedArticles: [dimissioni-telematiche]
+relatedArticles: [dimissioni-telematiche, certificazione-unica-guida-completa, contributi-inps-guida-completa]
 category: fisco-previdenza
 ---
 

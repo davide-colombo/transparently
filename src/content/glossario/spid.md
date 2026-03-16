@@ -1,7 +1,7 @@
 ---
 term: "Sistema Pubblico di Identità Digitale"
 definition: "Sistema di credenziali che consente di accedere con un'unica identità digitale ai servizi online della Pubblica Amministrazione e dei soggetti aderenti."
-relatedArticles: [spid-guida-completa]
+relatedArticles: [spid-guida-completa, 730-precompilato-guida-completa, isee-guida-completa, contributi-inps-guida-completa]
 sources:
   - name: "SPID"
     url: "https://www.spid.gov.it"

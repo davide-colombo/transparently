@@ -1,7 +1,7 @@
 ---
 term: "Fondo pensione (previdenza complementare)"
 definition: "Strumento di risparmio previdenziale a cui il lavoratore può destinare il TFR e contributi volontari, per integrare la pensione pubblica."
-relatedArticles: [tfr-guida-completa]
+relatedArticles: [tfr-guida-completa, fondo-pensione-guida-completa, contributi-inps-guida-completa]
 category: fisco-previdenza
 ---
 

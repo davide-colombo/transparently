@@ -1,7 +1,7 @@
 ---
 term: "TUIR — Testo Unico delle Imposte sui Redditi"
 definition: "D.P.R. 917/1986, il testo normativo fondamentale che disciplina l'imposizione fiscale sui redditi delle persone fisiche e delle società in Italia."
-relatedArticles: [come-leggere-busta-paga]
+relatedArticles: [come-leggere-busta-paga, 730-precompilato-guida-completa, fondo-pensione-guida-completa]
 category: fisco-previdenza
 ---
 

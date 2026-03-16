@@ -1,7 +1,7 @@
 ---
 term: "COVIP — Commissione di Vigilanza sui Fondi Pensione"
 definition: "Autorità pubblica indipendente che vigila sul funzionamento dei fondi pensione e delle forme di previdenza complementare in Italia."
-relatedArticles: [tfr-guida-completa]
+relatedArticles: [tfr-guida-completa, fondo-pensione-guida-completa]
 category: fisco-previdenza
 ---
 

@@ -1,7 +1,7 @@
 ---
 term: "Agenzia delle Entrate"
 definition: "Ente pubblico che gestisce gran parte dei servizi fiscali statali, dalle dichiarazioni ai rimborsi, fino alla consultazione della posizione tributaria."
-relatedArticles: [spid-guida-completa, app-io-guida-completa]
+relatedArticles: [spid-guida-completa, app-io-guida-completa, certificazione-unica-guida-completa, 730-precompilato-guida-completa, isee-guida-completa]
 sources:
   - name: "Agenzia delle Entrate"
     url: "https://www.agenziaentrate.gov.it"

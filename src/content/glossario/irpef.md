@@ -1,7 +1,7 @@
 ---
 term: "IRPEF — Imposta sul Reddito delle Persone Fisiche"
 definition: "Imposta progressiva sul reddito che ogni persona fisica residente in Italia è tenuta a pagare, calcolata per scaglioni con aliquote crescenti."
-relatedArticles: [come-leggere-busta-paga]
+relatedArticles: [come-leggere-busta-paga, 730-precompilato-guida-completa, contributi-inps-guida-completa, certificazione-unica-guida-completa, fondo-pensione-guida-completa]
 category: fisco-previdenza
 ---
 

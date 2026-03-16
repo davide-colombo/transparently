@@ -77,6 +77,18 @@ const thematicPaths = [
     guideCount: 7,
     articleIds: ['spid-guida-completa', 'app-io-guida-completa', 'cie-guida-completa'],
   },
+  {
+    title: 'Fisco e previdenza',
+    description:
+      'Dichiarazione dei redditi, ISEE, contributi previdenziali e previdenza complementare: tutto quello che un giovane lavoratore deve sapere per gestire il rapporto con il fisco e costruire la propria posizione pensionistica.',
+    guideCount: 5,
+    articleIds: [
+      'certificazione-unica-guida-completa',
+      '730-precompilato-guida-completa',
+      'isee-guida-completa',
+    ],
+    href: '/articoli#fisco-previdenza',
+  },
 ].map((path) => ({
   ...path,
   articles: path.articleIds.map(getArticle),
@@ -165,7 +177,7 @@ const methodCopy =
 
             <div>
               <a
-                href="/articoli"
+                href={path.href ?? '/articoli'}
                 class="text-sm font-medium text-accent transition-opacity duration-150 hover:opacity-80"
               >
                 Tutte le guide &rarr;

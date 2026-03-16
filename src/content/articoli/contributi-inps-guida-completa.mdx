@@ -1,0 +1,103 @@
+---
+title: "Contributi INPS: cosa sono, come funzionano, come verificarli"
+description: "Guida completa ai contributi previdenziali INPS: cosa sono, chi li paga, come si calcolano, come controllare l'estratto conto contributivo e cosa fare in caso di buchi."
+date: 2026-03-16
+verified: 2026-03-16
+verification_notes: "Fonti verificate: L. 335/1995 (riforma Dini, sistema contributivo, testo vigente su Normattiva), D.Lgs. 184/1997 (riscatto e ricongiunzione), L. 232/2016 art. 1 co. 249 (riscatto agevolato laurea, poi modificato da D.L. 4/2019 art. 20). Aliquote e procedure operative verificate su INPS.it — Servizi per il cittadino."
+category: fisco-previdenza
+tags: [contributi INPS, previdenza, pensione, estratto contributivo, buchi contributivi, riscatto laurea, gestione separata, lavoro dipendente]
+sources:
+  - name: "L. 335/1995 — Riforma del sistema pensionistico (testo vigente)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1995-08-08;335"
+  - name: "D.Lgs. 184/1997 — Ricongiunzione e riscatto dei contributi"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:1997-06-30;184"
+  - name: "INPS — Estratto conto contributivo"
+    url: "https://www.inps.it/it/it/dettaglio-scheda.schede-servizio-strumento.schede-servizi.estratto-conto-contributivo-702a0e34-3cee-46e3-8e3b-2463e8e9a3ff.estratto-conto-contributivo.html"
+  - name: "INPS — Riscatto della laurea"
+    url: "https://www.inps.it/it/it/dettaglio-scheda.schede-servizio-strumento.schede-servizi.riscatto-della-laurea-702a0e34-3cee-46e3-8e3b-2463e8e9a3ff.riscatto-della-laurea.html"
+  - name: "INPS — Aliquote contributive"
+    url: "https://www.inps.it/it/it/dettaglio-scheda.schede-informative.schede-informative---area-aziende.contributi.html"
+difficulty: base
+regional_scope: null
+draft: false
+---
+
+import T from '../../components/T.astro';
+import SourcesSection from '../../components/SourcesSection.astro';
+import CallToAction from '../../components/CallToAction.astro';
+
+Ogni mese, una parte di quello che guadagni non arriva sul tuo conto corrente. Viene trattenuta alla fonte e versata all'<T id="inps">INPS</T> sotto forma di contributi previdenziali. È il prezzo della tua futura pensione — o, più precisamente, il meccanismo con cui il sistema previdenziale italiano finanzia le pensioni di oggi e accumula i diritti per la tua pensione di domani.
+
+I <T id="contributi-inps">contributi INPS</T> sono il pilastro del sistema pensionistico obbligatorio. Se lavori in Italia — come dipendente, come autonomo, come collaboratore — stai versando contributi. Il problema è che quasi nessuno, specialmente all'inizio della carriera, li controlla. Questa guida spiega cosa sono, come funzionano, come verificare che siano stati effettivamente versati e cosa fare quando non lo sono.
+
+## Cosa sono i contributi previdenziali
+
+I contributi previdenziali sono somme obbligatorie, calcolate in percentuale sulla retribuzione o sul reddito, che il lavoratore e il datore di lavoro (nel caso del lavoro dipendente) versano all'INPS. Non sono un'imposta: non finanziano la spesa pubblica generica, ma il sistema previdenziale — pensioni, ammortizzatori sociali, prestazioni di malattia, maternità, disoccupazione.
+
+Il sistema italiano è a ripartizione: i contributi versati oggi da chi lavora finanziano le pensioni erogate oggi a chi è in pensione. In parallelo, i contributi versati durante la tua vita lavorativa determinano il diritto e l'importo della tua futura pensione. Dal 1° gennaio 1996, con l'entrata in vigore della L. 335/1995 (riforma Dini), chi non aveva anzianità contributiva a quella data è interamente nel sistema contributivo: la pensione sarà calcolata sull'ammontare totale dei contributi versati nell'arco della carriera, rivalutati e convertiti in rendita tramite coefficienti di trasformazione legati all'età di pensionamento. Se sei nato negli anni Novanta o dopo, sei con ogni probabilità interamente nel sistema contributivo.
+
+Questo significa che ogni euro di contributo versato conta direttamente per la tua pensione. E ogni euro non versato — per errore, per omissione del datore, per un periodo di inattività — è un euro che manca dal montante contributivo.
+
+## Quanto si paga e chi paga
+
+Per il lavoro dipendente del settore privato, l'aliquota contributiva complessiva è circa il 33% della retribuzione lorda. Di questa, circa i due terzi sono a carico del datore di lavoro e un terzo è a carico del lavoratore — la quota che vedi trattenuta in busta paga alla voce "contributi INPS" (o equivalente). La ripartizione esatta varia per settore e qualifica, ma l'ordine di grandezza è quello: su uno stipendio lordo di 1.800 euro mensili, circa 170–180 euro sono trattenuti a te e circa 530–540 sono versati dal datore, per un totale di circa 600 euro mensili destinati all'INPS.
+
+Il datore di lavoro è il <T id="sostituto-imposta">sostituto</T> anche per i contributi: trattiene la tua quota, aggiunge la propria e versa il totale all'INPS con il modello F24. Tu non devi fare nulla, ma devi verificare che il versamento avvenga — perché se il datore non versa, il danno è anche tuo (vedi sotto).
+
+Per la <T id="gestione-separata">Gestione Separata</T> INPS — che riguarda i collaboratori coordinati e continuativi, i lavoratori autonomi occasionali sopra la soglia e i titolari di partita IVA non iscritti ad altre casse — l'aliquota è diversa e varia per anno e tipologia. Per i collaboratori, l'aliquota è circa il 35% del compenso, di cui due terzi a carico del committente e un terzo a carico del collaboratore. Per i professionisti con partita IVA in Gestione Separata senza altra copertura previdenziale, l'aliquota è circa il 26%, interamente a carico del professionista (che può rivalerla in fattura nella misura del 4%).
+
+Per artigiani e commercianti, l'INPS prevede gestioni specifiche con aliquote proprie (circa il 24% del reddito d'impresa), versate direttamente dal lavoratore autonomo.
+
+## Il montante contributivo e il sistema contributivo
+
+Se sei interamente nel sistema contributivo (L. 335/1995), la tua futura pensione dipende dal montante contributivo — la somma di tutti i contributi versati durante la vita lavorativa, rivalutati anno per anno in base alla media quinquennale del tasso di crescita del PIL nominale. Al momento del pensionamento, il montante viene moltiplicato per un coefficiente di trasformazione che dipende dall'età: più tardi vai in pensione, più alto è il coefficiente e più alta la rendita annua.
+
+Il concetto chiave è l'accumulazione: ogni anno di lavoro aggiunge contributi al montante, e il montante cresce non solo per i nuovi versamenti ma anche per la rivalutazione dei contributi già accumulati. Un'interruzione contributiva — un periodo senza lavoro, un datore che non versa, uno stage non coperto da contributi — non è solo un buco nel passato, ma un ammanco che si propaga nel tempo riducendo anche la rivalutazione futura.
+
+Per dare un ordine di grandezza: con un reddito lordo medio di 30.000 euro annui e 40 anni di contribuzione piena nel sistema contributivo, il montante finale rivalutato produrrebbe una pensione lorda annua nell'ordine del 55–65% dell'ultimo reddito (il cosiddetto tasso di sostituzione). Con 35 anni di contribuzione la percentuale scende, con 30 scende ancora. I cinque anni persi non si traducono in un 12,5% in meno di pensione in modo lineare, ma il principio è quello: ogni anno conta.
+
+## Come verificare i contributi: l'estratto conto contributivo
+
+L'INPS mette a disposizione di ogni lavoratore l'estratto conto contributivo, accessibile dal portale INPS con <T id="spid">SPID</T>, <T id="cie">CIE</T> o CNS. Lo trovi nella sezione "Prestazioni e servizi" → "Estratto conto contributivo" (o cercandolo nel motore di ricerca interno del sito).
+
+L'estratto conto elenca tutti i periodi contributivi registrati a tuo nome: per ciascun periodo trovi il datore di lavoro o la gestione di appartenenza, il tipo di contribuzione (dipendente, gestione separata, figurativa), il numero di settimane o mesi accreditati, e la retribuzione o il reddito su cui i contributi sono stati calcolati.
+
+Il primo controllo da fare è la completezza: ogni rapporto di lavoro che hai avuto — inclusi gli stage retribuiti con contribuzione, i contratti a termine, i periodi di apprendistato, le collaborazioni — deve comparire nell'estratto. Se un periodo manca, significa che i contributi non sono stati versati o non sono stati registrati correttamente.
+
+Il secondo controllo è la congruenza: il numero di settimane accreditate deve corrispondere alla durata effettiva del rapporto (un anno di lavoro dipendente a tempo pieno vale 52 settimane contributive), e la retribuzione deve corrispondere a quella dichiarata in busta paga o nella <T id="certificazione-unica">Certificazione Unica</T>.
+
+La raccomandazione è verificare l'estratto conto almeno una volta all'anno, idealmente dopo aver ricevuto la CU. È un'operazione che richiede dieci minuti e che può evitare problemi enormi a distanza di anni, quando recuperare contributi non versati diventa molto più difficile.
+
+## Buchi contributivi: cosa sono e cosa fare
+
+Un buco contributivo è un periodo della tua vita lavorativa in cui non risultano contributi versati. Le cause più comuni sono: un datore di lavoro che non ha versato i contributi pur avendoli trattenuti dalla busta paga (evasione contributiva), un periodo di disoccupazione non coperto da <T id="naspi">NASpI</T> o da altra contribuzione figurativa, un lavoro in nero, uno stage o tirocinio senza copertura previdenziale.
+
+Se il buco dipende dall'omissione del datore, il primo passo è segnalare la situazione all'INPS. L'INPS può avviare un'azione di recupero nei confronti del datore. Per il lavoratore, la buona notizia è il principio di automaticità delle prestazioni (art. 2116 del Codice Civile): per il lavoro dipendente, il diritto alla pensione è garantito anche se il datore non ha effettivamente versato i contributi, purché sia dimostrabile il rapporto di lavoro. In pratica, se hai le buste paga e il contratto, i contributi ti vengono comunque accreditati nella posizione previdenziale anche se il datore è inadempiente. Questo principio non si applica ai lavoratori autonomi.
+
+Se il buco dipende da un periodo di non lavoro, le opzioni per coprirlo sono limitate: la contribuzione volontaria (possibile ma costosa e soggetta ad autorizzazione INPS) o il riscatto di periodi specifici (come il riscatto della laurea, vedi sotto).
+
+## Riscatto della laurea
+
+Il riscatto della laurea consente di trasformare gli anni di studio universitario in anni di contribuzione, pagando un costo all'INPS. È disciplinato dal D.Lgs. 184/1997 e successive modifiche, ed è disponibile in due forme.
+
+Il riscatto ordinario calcola il costo in base alla retribuzione e all'aliquota contributiva vigente al momento della domanda. Per un lavoratore dipendente con un reddito di 30.000 euro, il riscatto di un anno di laurea nel regime ordinario costa circa 10.000 euro (33% × 30.000). Il costo è interamente deducibile dal reddito ai fini <T id="irpef">IRPEF</T> e può essere rateizzato fino a 120 rate mensili senza interessi.
+
+Il riscatto agevolato (introdotto dal D.L. 4/2019, art. 20, che ha modificato e ampliato il precedente regime della L. 232/2016) è riservato ai periodi che ricadono interamente nel sistema contributivo (dal 1° gennaio 1996 in poi) e prevede un costo forfettario calcolato sul minimale di reddito degli artigiani e commercianti, indipendentemente dalla retribuzione effettiva. Il costo è sensibilmente inferiore: nell'ordine di 6.000 euro per anno di riscatto. Anche questo è deducibile e rateizzabile.
+
+Il riscatto della laurea è un investimento a lungo termine: aumenta il montante contributivo e anticipa l'anzianità contributiva utile per il diritto alla pensione. Per chi è all'inizio della carriera e ha una laurea magistrale (cinque anni riscattabili), la scelta tra riscatto agevolato subito e riscatto ordinario in futuro va valutata con attenzione — il costo agevolato è fisso indipendentemente dal reddito, quindi conviene particolarmente quando il reddito è ancora basso.
+
+## Contribuzione figurativa
+
+Non tutti i contributi vengono dal lavoro. L'INPS accredita contributi figurativi — ossia contributi "virtuali" a copertura di periodi in cui il lavoratore non ha lavorato ma era in una condizione tutelata dalla legge. I casi principali sono: la disoccupazione indennizzata (NASpI), la malattia, la maternità e il congedo parentale, la cassa integrazione, il servizio civile, il servizio militare obbligatorio.
+
+I contributi figurativi valgono sia per il diritto alla pensione (anzianità contributiva) sia per il calcolo dell'importo (montante contributivo), anche se in alcuni casi il valore accreditato può essere inferiore a quello della contribuzione piena. Anche questi devono comparire nell'estratto conto contributivo: se hai percepito la NASpI per sei mesi, quei sei mesi devono risultare come contribuzione figurativa.
+
+## Un errore da non fare
+
+Il più comune, tra i giovani lavoratori, è ignorare la questione contributiva perché la pensione sembra lontana. Lo è — ma il sistema contributivo è un sistema di accumulazione, e l'effetto della capitalizzazione composta fa sì che i contributi versati (o non versati) nei primi anni di carriera abbiano un peso proporzionalmente maggiore di quelli versati a fine carriera, perché hanno più tempo per essere rivalutati.
+
+Verificare l'estratto conto non richiede tempo, non costa nulla e può segnalarti un problema — un datore inadempiente, un periodo non registrato — quando è ancora risolvibile. Farlo diventare un'abitudine annuale è la cosa più utile che puoi fare per la tua posizione previdenziale.
+
+<SourcesSection sources={frontmatter.sources} />
+
+<CallToAction />

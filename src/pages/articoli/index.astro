@@ -62,6 +62,17 @@ const articleGroups = [
       'pagopa-guida-completa',
     ],
   },
+  {
+    id: 'fisco-previdenza',
+    label: 'Fisco e previdenza',
+    articleIds: [
+      'certificazione-unica-guida-completa',
+      '730-precompilato-guida-completa',
+      'isee-guida-completa',
+      'contributi-inps-guida-completa',
+      'fondo-pensione-guida-completa',
+    ],
+  },
 ].map((group) => ({
   ...group,
   articles: group.articleIds.map(getArticle),

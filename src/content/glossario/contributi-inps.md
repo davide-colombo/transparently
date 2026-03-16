@@ -1,7 +1,7 @@
 ---
 term: "Contributi previdenziali INPS"
 definition: "Trattenute obbligatorie sulla retribuzione che finanziano pensione, disoccupazione e altre prestazioni sociali, a carico sia del datore di lavoro sia del lavoratore."
-relatedArticles: [come-leggere-busta-paga]
+relatedArticles: [come-leggere-busta-paga, contributi-inps-guida-completa, certificazione-unica-guida-completa, fondo-pensione-guida-completa]
 category: fisco-previdenza
 ---
 

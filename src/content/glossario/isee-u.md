@@ -1,7 +1,7 @@
 ---
 term: "ISEE-U — ISEE per il diritto allo studio universitario"
 definition: "Versione dell'ISEE specifica per le prestazioni universitarie (tasse, borse di studio), che include il nucleo familiare di origine dello studente."
-relatedArticles: [universita-iscrizione-guida]
+relatedArticles: [universita-iscrizione-guida, isee-guida-completa]
 category: fisco-previdenza
 ---
 

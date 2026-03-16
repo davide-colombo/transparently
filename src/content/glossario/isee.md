@@ -1,7 +1,7 @@
 ---
 term: "ISEE — Indicatore della Situazione Economica Equivalente"
 definition: "Strumento con cui lo Stato misura la condizione economica di un nucleo familiare, utilizzato per accedere a prestazioni sociali agevolate."
-relatedArticles: [universita-iscrizione-guida]
+relatedArticles: [universita-iscrizione-guida, isee-guida-completa]
 category: fisco-previdenza
 ---
 

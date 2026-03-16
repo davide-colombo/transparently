@@ -1,7 +1,7 @@
 ---
 term: "CCNL"
 definition: "Contratto Collettivo Nazionale di Lavoro — l'accordo tra sindacati e associazioni datoriali che stabilisce le condizioni minime di lavoro per un intero settore."
-relatedArticles: [contratto-tempo-determinato]
+relatedArticles: [contratto-tempo-determinato, fondo-pensione-guida-completa]
 sources:
   - name: "CNEL — Archivio Contratti"
     url: "https://www.cnel.it/Archivio-Contratti"

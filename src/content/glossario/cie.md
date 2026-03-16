@@ -1,7 +1,7 @@
 ---
 term: "Carta d'Identità Elettronica"
 definition: "Documento di identità rilasciato dal Comune in formato elettronico, utilizzabile anche per l'accesso ai servizi digitali compatibili."
-relatedArticles: [spid-guida-completa, cie-guida-completa]
+relatedArticles: [spid-guida-completa, cie-guida-completa, 730-precompilato-guida-completa, isee-guida-completa, contributi-inps-guida-completa]
 sources:
   - name: "Carta d'Identità Elettronica"
     url: "https://www.cartaidentita.interno.gov.it"

@@ -1,8 +1,14 @@
 ---
-term: "DSU — Dichiarazione Sostitutiva Unica"
-definition: "Documento che il cittadino presenta all'INPS per ottenere l'attestazione ISEE, contenente i dati anagrafici, reddituali e patrimoniali del nucleo familiare."
-relatedArticles: [universita-iscrizione-guida]
+term: DSU
+definition: Dichiarazione Sostitutiva Unica, il modulo da presentare all'INPS per ottenere l'attestazione ISEE. Contiene i dati del nucleo familiare necessari al calcolo.
+relatedArticles:
+  - isee-guida-completa
+  - borse-studio-dsu-domanda
+  - universita-iscrizione-guida
 category: fisco-previdenza
+sources:
+  - name: "D.P.C.M. 159/2013 — Regolamento ISEE, art. 10 (DSU)"
+    url: "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.del.consiglio.dei.ministri:2013-12-05;159"
 ---
 
-La DSU (Dichiarazione Sostitutiva Unica) è il documento che contiene i dati anagrafici, reddituali e patrimoniali del nucleo familiare necessari per il calcolo dell'ISEE. Si presenta all'INPS direttamente online tramite il portale INPS (con SPID o CIE) oppure tramite un Centro di Assistenza Fiscale (CAF), che offre il servizio gratuitamente. Parte dei dati viene precompilata dall'INPS e dall'Agenzia delle Entrate sulla base delle informazioni già in loro possesso; il cittadino deve integrare o confermare i dati mancanti. Una volta presentata la DSU, l'INPS rilascia l'attestazione ISEE entro 10 giorni lavorativi. La DSU ha validità dal momento della presentazione fino al 31 dicembre dello stesso anno. Fonte: [INPS — ISEE](https://www.inps.it), [D.P.C.M. 159/2013](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.del.presidente.del.consiglio.dei.ministri:2013-12-05;159).
+La DSU (Dichiarazione Sostitutiva Unica) è il documento che il cittadino presenta all'[INPS](/glossario/inps) per ottenere l'attestazione [ISEE](/glossario/isee). Contiene dati autodichiarati — composizione del nucleo familiare, condizioni particolari, informazioni sull'abitazione — e dati acquisiti automaticamente dagli archivi dell'[Agenzia delle Entrate](/glossario/agenzia-entrate) e dell'INPS (redditi, patrimoni, trattamenti). Si presenta online sul portale INPS (con [SPID](/glossario/spid) o [CIE](/glossario/cie)), tramite un [CAF](/glossario/caf), o presso enti erogatori. La DSU precompilata, disponibile dal sito INPS, velocizza la procedura precaricando i dati già noti. L'attestazione ISEE è rilasciata di norma entro pochi giorni lavorativi.
