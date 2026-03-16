@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://transparently.vercel.app/sitemap-index.xml
+Sitemap: https://transparently-lovat.vercel.app/sitemap-index.xml

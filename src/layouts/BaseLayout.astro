@@ -29,7 +29,7 @@ const resolvedTitle =
     ? `${title} | ${siteName}`
     : `${siteName} | ${siteTagline}`;
 
-const siteUrl = Astro.site ?? new URL('https://transparently.vercel.app');
+const siteUrl = Astro.site ?? new URL('https://transparently-lovat.vercel.app');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 ---
 
