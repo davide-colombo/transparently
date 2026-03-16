@@ -1,0 +1,91 @@
+---
+import { getCollection } from 'astro:content';
+import { release } from '../data/release';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const articoli = await getCollection('articoli');
+const glossario = await getCollection('glossario');
+
+const releaseDate = new Date(release.date).toLocaleDateString('it-IT', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+});
+
+const stats = [
+  { value: articoli.length, label: 'articoli' },
+  { value: glossario.length, label: 'voci di glossario' },
+  { value: articoli.length + glossario.length + 5, label: 'pagine generate' },
+];
+---
+
+<BaseLayout
+  title="Progetto — Transparently"
+  description="Stato di sviluppo, numeri del sito e come sostenere Transparently."
+>
+  <section class="mx-auto max-w-[42.5rem]">
+    <p class="text-[0.74rem] uppercase tracking-[0.24em] text-ink/55">Progetto</p>
+    <h1 class="mt-4 font-serif text-5xl leading-none tracking-tight text-ink md:text-[4.2rem]">
+      Stato del progetto
+    </h1>
+
+    <div class="mt-10 space-y-10">
+      <section>
+        <h2 class="font-serif text-3xl tracking-tight text-ink">Ultima versione</h2>
+        <p class="mt-4 text-lg font-semibold text-accent">
+          v{release.version} <span class="text-ink/35">—</span> {releaseDate}
+        </p>
+        <p class="mt-4 text-lg leading-8 text-ink/72">{release.summary}</p>
+      </section>
+
+      <section class="border-t border-divider pt-10">
+        <h2 class="font-serif text-3xl tracking-tight text-ink">Il sito in numeri</h2>
+        <div class="mt-6 grid gap-6 sm:grid-cols-3">
+          {stats.map((stat) => (
+            <div class="rounded-2xl border border-divider bg-paper/60 p-5">
+              <p class="text-4xl font-semibold leading-none text-accent">{stat.value}</p>
+              <p class="mt-3 text-sm text-ink/60">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="border-t border-divider pt-10">
+        <h2 class="font-serif text-3xl tracking-tight text-ink">Chi c&apos;è dietro</h2>
+        <p class="mt-4 text-lg leading-8 text-ink/72">
+          Transparently è un progetto personale di Davide Colombo, 28 anni, ingegnere
+          biomedico. Nasce dalla volontà di capire davvero come funziona la burocrazia italiana e
+          di non sentirsi un pesce fuor d&apos;acqua di fronte a procedure, scadenze e sigle.
+          L&apos;obiettivo è permettere a chiunque di orientarsi con consapevolezza. Il progetto è
+          interamente autofinanziato per coprire i costi di ricerca, sviluppo e aggiornamento
+          continuo dei contenuti.
+        </p>
+        <a
+          href="https://github.com/davide-colombo"
+          target="_blank"
+          rel="noopener"
+          class="mt-5 inline-flex text-base font-medium text-accent transition-colors duration-150 hover:underline"
+        >
+          GitHub →
+        </a>
+      </section>
+
+      <section class="border-t border-divider pt-10">
+        <h2 class="font-serif text-3xl tracking-tight text-ink">Sostieni il progetto</h2>
+        <p class="mt-4 text-lg leading-8 text-ink/72">
+          Transparently è gratuito, senza pubblicità e senza tracciamento. Se ti è stato utile,
+          puoi offrirmi un caffè per aiutarmi a coprire i costi e continuare ad aggiornare i
+          contenuti.
+        </p>
+        <a
+          href="https://buymeacoffee.com/colombvo"
+          target="_blank"
+          rel="noopener"
+          class="mt-6 inline-block rounded-full bg-accent px-6 py-3 font-medium text-paper transition duration-150 hover:brightness-90"
+        >
+          Offrimi un caffè ☕
+        </a>
+      </section>
+    </div>
+  </section>
+</BaseLayout>

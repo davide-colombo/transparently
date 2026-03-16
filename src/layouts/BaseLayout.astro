@@ -25,9 +25,11 @@ const {
 } = Astro.props;
 
 const resolvedTitle =
-  title && title !== siteName
-    ? `${title} | ${siteName}`
-    : `${siteName} | ${siteTagline}`;
+  !title || title === siteName
+    ? `${siteName} | ${siteTagline}`
+    : title.includes(siteName)
+      ? title
+      : `${title} | ${siteName}`;
 
 const siteUrl = Astro.site ?? new URL('https://transparently-lovat.vercel.app');
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
