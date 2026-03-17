@@ -55,6 +55,7 @@
 
 @layer components {
   .article-body {
+    width: 100%;
     font-size: 1.0625rem;
     line-height: 1.8;
     color: color-mix(in srgb, var(--color-ink) 88%, white);
@@ -86,7 +87,9 @@
   .article-body ul,
   .article-body ol,
   .article-body blockquote {
+    width: 100%;
     max-width: 68ch;
+    margin-inline: auto;
   }
 
   .article-body strong {
